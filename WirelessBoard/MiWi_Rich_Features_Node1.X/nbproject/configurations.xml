@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="Application" projectFiles="true">
+        <itemPath>ConfigApp.h</itemPath>
+        <itemPath>DemoOutput.h</itemPath>
+        <itemPath>SystemProfile.h</itemPath>
+        <itemPath>MAC_EEProm.h</itemPath>
+        <itemPath>HardwareProfile.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Common" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="modules" projectFiles="true">
+        <itemPath>../../../../CodeBank8/modules/eeprom25xx/eeprom25xx.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Protocols" projectFiles="true">
+        <logicalFolder name="f1" displayName="MiWi" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MiWi/ConfigMiWi.h</itemPath>
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MiWi/MiWi.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="MiWiPRO" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MiWiPRO/ConfigMiWiPRO.h</itemPath>
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MiWiPRO/MiWiPRO.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="P2P" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/P2P/ConfigP2P.h</itemPath>
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/P2P/P2P.h</itemPath>
+        </logicalFolder>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/Console.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/EEPROM.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MCHP_API.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/MSPI.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/NVM.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/WirelessProtocols/SymbolTime.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/LCDBlocking.h</itemPath>
+        <itemPath>sw_i2c.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="Transceivers" projectFiles="true">
+        <logicalFolder name="f1" displayName="MRF89XA" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/MRF89XA/ConfigMRF89XA.h</itemPath>
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/MRF89XA/MRF89XA.h</itemPath>
+        </logicalFolder>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/crc.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/MCHP_MAC.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/Security.h</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Include/Transceivers/Transceivers.h</itemPath>
+      </logicalFolder>
+      <itemPath>hardware_profile.h</itemPath>
+      <itemPath>vectors.h</itemPath>
+      <itemPath>../../../../CodeBank8/types.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="Application" projectFiles="true">
+        <itemPath>DemoOutput.c</itemPath>
+        <itemPath>HardwareProfile.c</itemPath>
+        <itemPath>MAC_EEProm.c</itemPath>
+        <itemPath>Cisternas Unison 2.0.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+        <itemPath>../../../../CodeBank8/bsp/Microchip/delays/delays.c</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/delays/delays.h</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/gpios/gpios.c</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/gpios/gpios.h</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/spi/spi.c</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/spi/spi.h</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/system/system.c</itemPath>
+        <itemPath>../../../../CodeBank8/bsp/Microchip/system/system.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Common" projectFiles="true">
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Common/LCDBlocking.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Common/TimeDelay.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="midleware" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="modules" projectFiles="true">
+        <itemPath>../../../../CodeBank8/modules/st7032/st7032.c</itemPath>
+        <itemPath>../../../../CodeBank8/modules/st7032/st7032.h</itemPath>
+        <itemPath>../../../../CodeBank8/modules/eeprom25xx/eeprom25xx.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="Protocols" projectFiles="true">
+        <logicalFolder name="f1" displayName="MiWi" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/MiWi/MiWi.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="MiWiPRO" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/MiWiPRO/MiWiPRO.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="P2P" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/P2P/P2P.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SW_I2C" displayName="SW_I2C" projectFiles="true">
+          <itemPath>SW_I2C/swacki2c.c</itemPath>
+          <itemPath>SW_I2C/swckti2c.c</itemPath>
+          <itemPath>SW_I2C/swgtci2c.c</itemPath>
+          <itemPath>SW_I2C/swgtsi2c.c</itemPath>
+          <itemPath>SW_I2C/swptci2c.c</itemPath>
+          <itemPath>SW_I2C/swptsi2c.c</itemPath>
+          <itemPath>SW_I2C/swrsti2c.c</itemPath>
+          <itemPath>SW_I2C/swstpi2c.c</itemPath>
+          <itemPath>SW_I2C/swstri2c.c</itemPath>
+        </logicalFolder>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/Console.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/EEPROM.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/MSPI.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/NVM.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols/SymbolTime.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="Transceivers" projectFiles="true">
+        <logicalFolder name="f1" displayName="MRF89XA" projectFiles="true">
+          <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Transceivers/MRF89XA/MRF89XA.c</itemPath>
+        </logicalFolder>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Transceivers/crc.c</itemPath>
+        <itemPath>../../../../microchip_solutions_v2013-06-15/Microchip/Transceivers/security.c</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../CodeBank8</Elem>
+    <Elem>../../../../microchip_solutions_v2013-06-15/Microchip/WirelessProtocols</Elem>
+    <Elem>../../../../microchip_solutions_v2013-06-15/Microchip/Transceivers</Elem>
+    <Elem>../../../../microchip_solutions_v2013-06-15/Microchip/Include</Elem>
+    <Elem>../../../../microchip_solutions_v2013-06-15/Microchip/Common</Elem>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="default" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC18F47J13</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>PICkit3PlatformTool</platformTool>
+        <languageToolchain>C18</languageToolchain>
+        <languageToolchainVersion>3.47</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <C18>
+        <property key="code-model" value="ms"/>
+        <property key="data-model" value="oa-"/>
+        <property key="default-char-unsigned" value="false"/>
+        <property key="enable-all-optimizations" value="true"/>
+        <property key="enable-int-promotion" value="false"/>
+        <property key="enable-multi-bank-stack-model" value="false"/>
+        <property key="enable-ob" value="true"/>
+        <property key="enable-od" value="true"/>
+        <property key="enable-om" value="true"/>
+        <property key="enable-on" value="true"/>
+        <property key="enable-op" value="true"/>
+        <property key="enable-opa" value="true"/>
+        <property key="enable-or" value="true"/>
+        <property key="enable-os" value="true"/>
+        <property key="enable-ot" value="true"/>
+        <property key="enable-ou" value="true"/>
+        <property key="enable-ow" value="true"/>
+        <property key="extra-include-directories"
+                  value=".;..\..\..\..\CodeBank8;..\..\..\..\CodeBank8\bsp\Microchip;..\..\..\..\CodeBank8\middleware;..\..\..\..\CodeBank8\modules;C:\microchip_solutions_v2013-06-15\Microchip;C:\microchip_solutions_v2013-06-15\Microchip\Include;C:\microchip_solutions_v2013-06-15\Microchip\Transceivers;C:\microchip_solutions_v2013-06-15\Microchip\WirelessProtocols"/>
+        <property key="optimization-master" value="Enable all"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="procedural-abstraction-passes" value="0"/>
+        <property key="storage-class" value="sca"/>
+        <property key="verbose" value="false"/>
+        <property key="warning-level" value="2"/>
+      </C18>
+      <C18-LD>
+        <property key="cod-file" value="false"/>
+        <property key="extra-lib-directories" value=""/>
+        <property key="hex-output-format" value="INHX32"/>
+        <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
+      </C18-LD>
+      <C18LanguageToolchain>
+        <property key="extended-mode" value="false"/>
+        <property key="extended-mode-mcc18" value="false"/>
+        <property key="extended-mode-mpasm" value="false"/>
+        <property key="extended-mode-mplink" value="false"/>
+        <property key="stack-analysis" value="false"/>
+        <property key="stack-analysis-mcc18" value="false"/>
+        <property key="stack-analysis-mplink" value="false"/>
+      </C18LanguageToolchain>
+      <PICkit3PlatformTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
+        <property key="hwtoolclock.frcindebug" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="false"/>
+        <property key="memories.configurationmemory" value="false"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="false"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="false"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.end" value="0x1fff7"/>
+        <property key="memories.programmemory.partition2" value="true"/>
+        <property key="memories.programmemory.partition2.end"
+                  value="${memories.programmemory.partition2.end.value}"/>
+        <property key="memories.programmemory.partition2.start"
+                  value="${memories.programmemory.partition2.start.value}"/>
+        <property key="memories.programmemory.start" value="0x0"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmertogo.imagename" value=""/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmspeed" value="2"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveprogramrange.end" value="0x1fff7"/>
+        <property key="programoptions.preserveprogramrange.start" value="0x0"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="false"/>
+        <property key="voltagevalue" value="3.25"/>
+      </PICkit3PlatformTool>
+    </conf>
+  </confs>
+</configurationDescriptor>

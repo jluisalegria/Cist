@@ -1,0 +1,10 @@
+Cisternas Unison 2.0 es el archivo usado en las tarjetas inalambricas del proyecto cisternas
+
+se usa el mismo codigo en la tarjeta pan coordinator y End Devices.
+
+myNodeNumber = 0  define funcionalidad como pan coordinator.
+
+valores diferentes a cero definen funcionalidad como end devices.
+
+
+

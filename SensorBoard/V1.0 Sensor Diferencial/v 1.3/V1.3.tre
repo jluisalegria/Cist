@@ -1,0 +1,112 @@
+ÀÄv 1
+   ÃÄMAIN  0/358  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³  ³  ÀÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄTemporizaciones  0/58  Ram=0
+   ³  ³  ÃÄSensores  0/24  Ram=0
+   ³  ³  ÃÄLee_ADC  0/54  Ram=0
+   ³  ³  ÃÄCalcula_Nivel  0/404  Ram=4
+   ³  ³  ³  ÃÄ@MUL1616  0/32  Ram=5
+   ³  ³  ³  ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@MUL3232  0/86  Ram=14
+   ³  ³  ³  ÀÄ@DIV3232  0/144  Ram=13
+   ³  ³  ÃÄEnvia_Estado_Pickit  0/102  Ram=0
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ³  ÀÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄLee_ADC  0/54  Ram=0
+   ³  ³  ÀÄCalcula_Valores_Limite_ADC  0/452  Ram=1
+   ³  ³     ÃÄ@PSTRINGC_646  0/32  Ram=2
+   ³  ³     ³  ÀÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³     ÀÄ@PSTRINGC_646  0/32  Ram=2
+   ³  ³        ÀÄ*
+   ³  ÃÄActualiza_Estado_Relays  0/72  Ram=0
+   ³  ÃÄVerifica_CMD_Pickit  0/1056  Ram=1
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄSensores  0/24  Ram=0
+   ³  ³  ÃÄLee_ADC  0/54  Ram=0
+   ³  ³  ÃÄCalcula_Nivel  0/404  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄEnvia_Estado_Pickit  0/102  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ³  ÀÄ@PUTCHAR_2_  0/66  Ram=1
+   ³  ÀÄVerifica_CMD_RS485  0/1068  Ram=1
+   ³     ÃÄ@PUTCHAR_2_  0/66  Ram=1
+   ³     ÃÄSensores  0/24  Ram=0
+   ³     ÃÄLee_ADC  0/54  Ram=0
+   ³     ÃÄCalcula_Nivel  0/404  Ram=4
+   ³     ³  ÀÄ*
+   ³     ÃÄEnvia_Estado_RS485  0/96  Ram=0
+   ³     ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ³  ÀÄ@delay_ms1  0/40  Ram=1
+   ³     ÃÄ@delay_ms1  0/40  Ram=1
+   ³     ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄLeer_Bytes_de_Config  0/336  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄ@delay_ms1  0/40  Ram=1
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
+   ³     ÀÄ@delay_ms1  0/40  Ram=1
+   ÃÄTIMER1_isr  0/30  Ram=0
+   ÃÄEXT1_isr  0/54  Ram=2
+   ³  ÀÄ@GETCH_2_  0/72  Ram=1
+   ÀÄRDA_isr  0/56  Ram=2

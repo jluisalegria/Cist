@@ -1,0 +1,193 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     Blink
+017     Tiempo
+018     Blink_Flotador
+019     Tiempo_Blink
+01A     Tiempo_Envio_CMD
+01B     Num_Serie1
+01C     Metros_Cubicos_Cisterna
+01D     Numero_de_Cisterna
+01E-01F Distancia_Medida
+020     Distancia_Medida_High
+021     Distancia_Medida_Low
+022-023 Distancia
+024-025 Medida_1
+026-027 Medida_2
+028-029 Medida_3
+02A-02B Medida_4
+02C-02D Distancia_Vacio
+02E     Distancia_Vacio_High
+02F     Distancia_Vacio_Low
+030-031 Distancia_lleno
+032     Distancia_Lleno_High
+033     Distancia_Lleno_Low
+034     Flotador
+035     Respuesta
+036     CMD_Ejecutado
+037     Segundos
+038     Estado_Relays
+039-03C Calculo1
+03D-040 Calculo2
+041     Porcentaje
+042     Char_Recibido_Pickit
+043     Char_Recibido_RS485
+044     Indice_Pickit
+045     Indice_RS485
+046     Indice_Sensor
+047-064 Pickitbuff
+065-082 RS485buff
+083-08C Sensorbuff
+08D.0   F_CMD_Completo_Pickit
+08D.1   F_CMD_Completo_RS485
+08D.2   F_CMD_Completo_Sensor
+08E     Verifica_CMD_Pickit.i
+08E-091 @DIV3232.P1
+08E     Verifica_CMD_RS485.i
+08E     Calcula_Nivel.@SCRATCH1
+08E     Verifica_CMD_Sensor.@SCRATCH1
+08E     @PSTRINGC_650.@SCRATCH1
+08F     @delay_ms1.P1
+08F     Leer_Bytes_de_Config.@SCRATCH1
+08F     Calcula_Nivel.@SCRATCH2
+08F     Verifica_CMD_Pickit.@SCRATCH1
+08F     Verifica_CMD_RS485.@SCRATCH1
+08F     Verifica_CMD_Sensor.@SCRATCH2
+08F     @PSTRINGC_650.@SCRATCH2
+090     @PUTCHAR_2_.P1
+090-091 @MUL1616.P2
+090     Calcula_Nivel.@SCRATCH3
+091     Calcula_Nivel.@SCRATCH4
+092-095 @MUL3232.P1
+092-093 @MUL1616.P2
+092-095 @DIV3232.P3
+094     @MUL1616.@SCRATCH1
+096-099 @MUL3232.P1
+096     @DIV3232.@SCRATCH1
+097     @DIV3232.@SCRATCH2
+098     @DIV3232.@SCRATCH3
+099     @DIV3232.@SCRATCH4
+09A     @MUL3232.@SCRATCH1
+09A     @DIV3232.@SCRATCH5
+09B     @MUL3232.@SCRATCH2
+09C     @MUL3232.@SCRATCH3
+09D     @MUL3232.@SCRATCH4
+09E     @MUL3232.@SCRATCH5
+09F     @MUL3232.@SCRATCH6
+0A0     @GETCH_2_.@SCRATCH1
+0A0     EXT1_isr.@SCRATCH1
+0A0     EXT2_isr.@SCRATCH1
+0A0     RDA_isr.@SCRATCH1
+0A1     EXT1_isr.@SCRATCH2
+0A1     EXT2_isr.@SCRATCH2
+0A1     RDA_isr.@SCRATCH2
+0A2     EXT2_isr.@SCRATCH3
+0A3     EXT2_isr.@SCRATCH4
+0A4     @GETCH_3_.@SCRATCH1
+F6B.6   C2OUT
+F6D.6   C1OUT
+F74     CCP_4_LOW
+F74     CCP_4
+F75     CCP_4_HIGH
+FB8     CCP_3
+FB8     CCP_3_LOW
+FB9     CCP_3_HIGH
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  TIMER1_isr
+0000D8  @GETCH_2_
+000120  EXT1_isr
+000156  @GETCH_3_
+00019E  EXT2_isr
+0001F0  RDA_isr
+000228  @const726.call
+00025A  @delay_ms1
+000282  Leer_Bytes_de_Config
+00034C  Estado_Flotador
+000366  Lee_Distancia
+00036E  @MUL3232
+0003C4  @DIV3232
+000454  Calcula_Nivel
+00050E  @PUTCHAR_2_
+000550  Envia_Estado_Pickit
+000594  Temporizaciones
+0005BA  Actualiza_Estado_Relays
+000602  @PUTCHARI_BIU_1
+00060A  Verifica_CMD_Pickit
+000936  Envia_Estado_RS485
+00099E  Verifica_CMD_RS485
+000CCC  @MUL1616
+000CEA  @PSTRINGC_650
+000D0C  Verifica_CMD_Sensor
+000DEC  @cinit1
+000DEC  MAIN
+000E68  @cinit2
+0496  Salida
+0661  Salida2
+
+Project Directory:
+    C:\Users\INADEM\Documents\1. Firmware\Cisternas Unison\V-Ultra 1.0\
+
+Project Files:
+    V-Ultra 1.0.c                                           [10-mar.-16 17:07  CRC=3D2BAF36]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F14K22.h [12-nov.-13 14:35  CRC=5B3CFF82]
+
+Source signature=F3A5AE3A
+
+Units:
+    V-Ultra 1.0 (main)
+
+Compiler Settings:
+    Processor:      PIC18F14K22
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   V-Ultra 1.0.xsym
+    Errors:      V-Ultra 1.0.err
+    Ext Symbols: V-Ultra 1.0.esym
+    INHX32:      V-Ultra 1.0.hex
+    Symbols:     V-Ultra 1.0.sym
+    List:        V-Ultra 1.0.lst
+    Debug/COFF:  V-Ultra 1.0.cof
+    Project:     V-Ultra 1.0.ccspjt
+    Call Tree:   V-Ultra 1.0.tre
+    Statistics:  V-Ultra 1.0.STA

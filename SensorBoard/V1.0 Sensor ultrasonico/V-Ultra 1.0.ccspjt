@@ -1,0 +1,64 @@
+[PROJECT]
+Target=V-Ultra 1.0.hex
+Processor_Text=PIC18F14K22
+CCSVersion=5.015
+Compiler=PCH
+Development_Mode=
+ToolSuite=CCS
+[Target Data]
+FileList=V-Ultra 1.0.c
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\\;<default>\;C:\Program Files (x86)\PICC\drivers\
+Library=
+LinkerScript=
+[V-Ultra 1.0.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=V-Ultra 1.0.c
+[Documentation]
+1=C:\Users\INADEM\Documents\1. Firmware\Cisternas Unison\V-Ultra 1.0\V-Ultra 1.0 Notes.txt
+1T=V-Ultra 1.0 Notes.txt
+1E=
+1W=0
+Count=1
+[Opened Files]
+1=V-Ultra 1.0.c
+2=V-Ultra 1.0 Notes.txt
+3=
+4=V-Ultra 1.0.sym
+5=V-Ultra 1.0.tre
+6=
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=1
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=1
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=V-Ultra 1.0 (main)

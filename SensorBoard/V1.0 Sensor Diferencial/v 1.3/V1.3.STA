@@ -1,0 +1,70 @@
+
+ROM used:   4928/8192 (30%)
+            4928/8192 (30%) including unused fragments
+
+            2.8 Average locations per line
+            10.3 Average locations per statement
+
+RAM used:   129/512 (25%) at main() level
+            152/512 (30%) worst case
+
+Stack used: 6 worst case (4 in main + 2 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  904   477 100  V1.3.c
+  842     0   0  C:\Program Files (x86)\PICC\Devices\18F14K22.h
+----- -----
+ 1746   477 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0    1             @delay_ms1
+0      8   0    0             @PUTCHARI_BIU_1
+0     66   1    1             @PUTCHAR_2_
+0     72   1    1             @GETCH_2_
+0     30   0    0   125  3.0  TIMER1_isr
+0     54   1    2   226  4.1  EXT1_isr
+0     56   1    2   226  4.1  RDA_isr
+0    336   3    1   667  2.9  Leer_Bytes_de_Config
+0    102   1    0   615  1.9  Envia_Estado_Pickit
+0     96   1    0   731  1.9  Envia_Estado_RS485
+0     72   1    0   357  3.7  Actualiza_Estado_Relays
+0     24   0    0   115  2.5  Sensores
+0     54   1    0   149  2.2  Lee_ADC
+0    452   5    1  1450  6.8  Calcula_Valores_Limite_ADC
+0     28   0    0             @const701
+0     32   0    2             @PSTRINGC_646
+0     30   0    0             @const703
+0    404   4    4   820  7.4  Calcula_Nivel
+0     32   0    5   820  7.4  @MUL1616
+0     86   1   14   820  7.4  @MUL3232
+0    144   1   13   820  7.4  @DIV3232
+0     58   1    0   415  4.2  Temporizaciones
+0   1056  11    1  4648  9.4  Verifica_CMD_Pickit
+0   1068  11    1  4648  9.4  Verifica_CMD_RS485
+0    358   4    0   952  4.9  MAIN
+ Inline         0  4648  9.4  @cinit1
+
+Program metrics:
+    Functions               19
+    Statements              477
+    Comments                395
+    Volume (V)              35223
+    Difficulty (D)          101.0
+    Effort to implement (E) 3558508
+    Time to implement (T)   54 hours, 55 minutes
+    Est Delivered Bugs (B)  8
+    Cyclomatic Complexity   117
+    Maintainability (MI)    113
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-03FFE  4758  11452  
+
+
+

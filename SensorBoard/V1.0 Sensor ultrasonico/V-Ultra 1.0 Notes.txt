@@ -1,0 +1,9 @@
+Asignación de memoria EEprom del uC.
+0  Tiempo_Envio_CMD  Tiempo para envio de estado del sistema por serial Pickit
+1  Num_Serie1        Numero de serie
+2  Estado de relays
+
+16 Distancia_Vacio_High
+17 Distancia_Vacio_Low
+18 Distancia_Lleno_High
+19 Distancia_Lleno_Low 

@@ -1,0 +1,188 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     Blink
+017     Tiempo
+018     Blink_Flotador
+019     Tiempo_Blink
+01A     Tiempo_Envio_CMD
+01B     Num_Serie1
+01C-01D Valor_ADC
+01E     Valor_ADC_High
+01F     Valor_ADC_Low
+020-021 Valor_ADC_Vacio
+022     Valor_ADC_Vacio_Low
+023     Valor_ADC_Vacio_High
+024-025 Valor_ADC_Lleno
+026     Valor_ADC_Lleno_Low
+027     Valor_ADC_Lleno_High
+028-029 Valor_ADC_1m
+02A     Valor_ADC_1m_Low
+02B     Valor_ADC_1m_High
+02C     Metros_Cubicos_Cisterna
+02D     Numero_de_Cisterna
+02E     Altura_Cisterna
+02F     Contador_ADC_Minimo_Valor
+030     Contador_ADC_Maximo_Valor
+031     Contador_Flotador_Activo
+032     Flotador
+033     Respuesta
+034     CMD_Ejecutado
+035     Segundos
+036     Estado_Relays
+037.0   F_Flotador_Activo
+037.1   F_CMD_Completo_Pickit
+037.2   F_CMD_Completo_RS485
+038-03B Resta
+03C-03F Resta2
+040     Porcentaje
+041     Char_Recibido_Pickit
+042     Char_Recibido_RS485
+043     Indice_Pickit
+044     Indice_RS485
+045-062 Pickitbuff
+063-080 RS485buff
+081     Verifica_CMD_Pickit.i
+081     Verifica_CMD_RS485.i
+081     Calcula_Valores_Limite_ADC.@SCRATCH1
+081     @PSTRINGC_646.@SCRATCH1
+082-083 Calcula_Nivel.Valor_ADC_Lleno_2
+082-083 Lee_ADC.Valor_ADC_2
+082     @PSTRINGC_646.@SCRATCH2
+082     Verifica_CMD_Pickit.@SCRATCH1
+082     Verifica_CMD_RS485.@SCRATCH1
+083     @PUTCHAR_2_.P1
+084     @delay_ms1.P1
+084-087 @DIV3232.P2
+084     Leer_Bytes_de_Config.@SCRATCH1
+084     Calcula_Nivel.@SCRATCH1
+085     Calcula_Nivel.@SCRATCH2
+086-087 @MUL1616.P1
+086     Calcula_Nivel.@SCRATCH3
+087     Calcula_Nivel.@SCRATCH4
+088-089 @MUL1616.P1
+088-08B @DIV3232.P2
+088-08B @MUL3232.P3
+08A     @MUL1616.@SCRATCH1
+08C-08F @MUL3232.P1
+08C     @DIV3232.@SCRATCH1
+08D     @DIV3232.@SCRATCH2
+08E     @DIV3232.@SCRATCH3
+08F     @DIV3232.@SCRATCH4
+090     @MUL3232.@SCRATCH1
+090     @DIV3232.@SCRATCH5
+091     @MUL3232.@SCRATCH2
+092     @MUL3232.@SCRATCH3
+093     @MUL3232.@SCRATCH4
+094     @MUL3232.@SCRATCH5
+095     @MUL3232.@SCRATCH6
+096     @GETCH_2_.@SCRATCH1
+096     EXT1_isr.@SCRATCH1
+096     RDA_isr.@SCRATCH1
+097     EXT1_isr.@SCRATCH2
+097     RDA_isr.@SCRATCH2
+F6B.6   C2OUT
+F6D.6   C1OUT
+F74     CCP_4
+F74     CCP_4_LOW
+F75     CCP_4_HIGH
+FB8     CCP_3
+FB8     CCP_3_LOW
+FB9     CCP_3_HIGH
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  TIMER1_isr
+0000CC  @GETCH_2_
+000114  EXT1_isr
+00014A  RDA_isr
+000182  @const701.call
+00019E  @const703.call
+0001BC  @delay_ms1
+0001E4  Leer_Bytes_de_Config
+000334  Sensores
+00034C  Lee_ADC
+000382  @MUL1616
+0003A2  @MUL3232
+0003F8  @DIV3232
+000488  Calcula_Nivel
+00061C  @PUTCHAR_2_
+00065E  Envia_Estado_Pickit
+0006C4  @PSTRINGC_646
+0006E4  Calcula_Valores_Limite_ADC
+0008A8  Temporizaciones
+0008E2  Actualiza_Estado_Relays
+00092A  @PUTCHARI_BIU_1
+000932  Verifica_CMD_Pickit
+000D52  Envia_Estado_RS485
+000DB2  Verifica_CMD_RS485
+0011DE  MAIN
+0011DE  @cinit1
+001238  @cinit2
+06A4  Salida
+08EA  Salida2
+
+Project Directory:
+    D:\Mis documentos\CCS C Projects\Sensor Board\v 1.3\
+
+Project Files:
+    V1.3.c                                                  [04-ago.-15 15:44  CRC=60B15E58]
+    C:\Program Files (x86)\PICC\Devices\18F14K22.h          [03-jul.-13 14:29  CRC=A885F6E3]
+
+Source signature=B1BD4C1E
+
+Units:
+    V1.3 (main)
+
+Compiler Settings:
+    Processor:      PIC18F14K22
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   V1.3.xsym
+    Errors:      V1.3.err
+    Ext Symbols: V1.3.esym
+    INHX32:      V1.3.hex
+    Symbols:     V1.3.sym
+    List:        V1.3.lst
+    Debug/COFF:  V1.3.cof
+    Project:     V1.3.ccspjt
+    Call Tree:   V1.3.tre
+    Statistics:  V1.3.STA

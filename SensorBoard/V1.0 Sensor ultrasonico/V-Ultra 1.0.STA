@@ -1,0 +1,71 @@
+
+ROM used:   3964/16384 (24%)
+            3964/16384 (24%) including unused fragments
+
+            2.5 Average locations per line
+            9.8 Average locations per statement
+
+RAM used:   142/512 (28%) at main() level
+            165/512 (32%) worst case
+
+Stack used: 5 worst case (3 in main + 2 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  742   405 100  V-Ultra 1.0.c
+  854     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F14K22.h
+----- -----
+ 1596   405 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   1    1             @delay_ms1
+0      8   0    0             @PUTCHARI_BIU_1
+0     66   1    1             @PUTCHAR_2_
+0     72   1    1             @GETCH_2_
+0     72   1    1             @GETCH_3_
+0     30   0    0   125  3.0  TIMER1_isr
+0     54   1    2   226  4.1  EXT1_isr
+0     82   1    4   228  4.5  EXT2_isr
+0     56   1    2   226  4.1  RDA_isr
+0    202   3    1   383  2.8  Leer_Bytes_de_Config
+0     68   1    0   367  1.9  Envia_Estado_Pickit
+0    104   1    0   731  1.9  Envia_Estado_RS485
+0     72   1    0   357  3.7  Actualiza_Estado_Relays
+0     26   0    0   115  2.5  Estado_Flotador
+0      8   0    0    21  0.9  Lee_Distancia
+0    186   2    4   364  7.0  Calcula_Nivel
+0     86   1   14             @MUL3232
+0    144   2   13   248  2.7  @DIV3232
+0     38   0    0   248  2.7  Temporizaciones
+0    812  10    1  4083  9.4  Verifica_CMD_Pickit
+0    814  10    1  4148  9.4  Verifica_CMD_RS485
+0    224   3    2   719  7.0  Verifica_CMD_Sensor
+0     30   0    5             @MUL1616
+0     50   1    0             @const726
+0     34   0    2  1114  4.9  @PSTRINGC_650
+0    404   5    0  1114  4.9  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               18
+    Statements              405
+    Comments                279
+    Volume (V)              22424
+    Difficulty (D)          78.6
+    Effort to implement (E) 1762968
+    Time to implement (T)   27 hours, 12 minutes
+    Est Delivered Bugs (B)  5
+    Cyclomatic Complexity   82
+    Maintainability (MI)    73
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000B8   178  0  
+000BA-03FFE  3782  12416  
+
+
+

@@ -1,0 +1,2597 @@
+CCS PCH C Compiler, Version 5.015, 5967               10-mar.-16 17:07
+
+               Filename:   C:\Users\INADEM\Documents\1. Firmware\Cisternas Unison\V-Ultra 1.0\V-Ultra 1.0.lst
+
+               ROM used:   3964 bytes (24%)
+                           Largest free fragment is 12416
+               RAM used:   142 (28%) at main() level
+                           165 (32%) worst case
+               Stack used: 5 locations (3 in main + 2 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   0DEC
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  F9D.5
+004A:  GOTO   0054
+004E:  BTFSC  F9E.5
+0050:  GOTO   01F0
+0054:  BTFSS  FF0.3
+0056:  GOTO   0060
+005A:  BTFSC  FF0.0
+005C:  GOTO   0120
+0060:  BTFSS  FF0.4
+0062:  GOTO   006C
+0066:  BTFSC  FF0.1
+0068:  GOTO   019E
+006C:  BTFSS  F9D.0
+006E:  GOTO   0078
+0072:  BTFSC  F9E.0
+0074:  GOTO   00BA
+0078:  MOVFF  0E,00
+007C:  MOVFF  0F,01
+0080:  MOVFF  10,02
+0084:  MOVFF  11,03
+0088:  MOVFF  0C,FE9
+008C:  MOVFF  07,FEA
+0090:  BSF    07.7
+0092:  MOVFF  08,FE1
+0096:  MOVFF  09,FE2
+009A:  MOVFF  0A,FD9
+009E:  MOVFF  0B,FDA
+00A2:  MOVFF  12,FF3
+00A6:  MOVFF  13,FF4
+00AA:  MOVFF  14,FFA
+00AE:  MOVF   04,W
+00B0:  MOVFF  06,FE0
+00B4:  MOVFF  05,FD8
+00B8:  RETFIE 0
+.................... #include <18F14K22.h> 
+.................... //////////// Standard Header file for the PIC18F14K22 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F14K22 
+*
+0228:  DATA 4E,6F
+022A:  DATA 20,65
+022C:  DATA 73,20
+022E:  DATA 75,6E
+0230:  DATA 20,63
+0232:  DATA 6F,6D
+0234:  DATA 61,6E
+0236:  DATA 64,6F
+0238:  DATA 20,76
+023A:  DATA 61,6C
+023C:  DATA 69,64
+023E:  DATA 6F,2C
+0240:  DATA 20,6E
+0242:  DATA 6F,20
+0244:  DATA 73,65
+0246:  DATA 20,72
+0248:  DATA 65,63
+024A:  DATA 69,62
+024C:  DATA 69,6F
+024E:  DATA 20,6D
+0250:  DATA 65,64
+0252:  DATA 69,64
+0254:  DATA 61,20
+0256:  DATA 0A,09
+0258:  DATA 0D,00
+*
+036E:  CLRF   x9A
+0370:  CLRF   x9B
+0372:  MOVLW  01
+0374:  MOVWF  x9C
+0376:  CLRF   FDA
+0378:  CLRF   FD9
+037A:  CLRF   x9F
+037C:  MOVLW  92
+037E:  MOVWF  x9E
+0380:  CLRF   FEA
+0382:  MOVLW  96
+0384:  MOVWF  FE9
+0386:  MOVFF  9F,FE2
+038A:  MOVFF  9E,FE1
+038E:  MOVFF  9C,9D
+0392:  BCF    FD8.0
+0394:  MOVF   FE5,W
+0396:  MULWF  FEE
+0398:  MOVF   FF3,W
+039A:  ADDWFC x9A,F
+039C:  MOVF   FF4,W
+039E:  ADDWFC x9B,F
+03A0:  DECFSZ x9D,F
+03A2:  BRA    0392
+03A4:  MOVFF  9A,FDE
+03A8:  MOVFF  9B,9A
+03AC:  CLRF   x9B
+03AE:  BTFSC  FD8.0
+03B0:  INCF   x9B,F
+03B2:  INCF   x9E,F
+03B4:  BTFSC  FD8.2
+03B6:  INCF   x9F,F
+03B8:  INCF   x9C,F
+03BA:  MOVF   x9C,W
+03BC:  SUBLW  05
+03BE:  BNZ   0380
+03C0:  GOTO   04AC (RETURN)
+03C4:  BTFSC  FD8.1
+03C6:  BRA    03CE
+03C8:  CLRF   FEA
+03CA:  MOVLW  96
+03CC:  MOVWF  FE9
+03CE:  CLRF   00
+03D0:  CLRF   01
+03D2:  CLRF   02
+03D4:  CLRF   03
+03D6:  CLRF   x96
+03D8:  CLRF   x97
+03DA:  CLRF   x98
+03DC:  CLRF   x99
+03DE:  MOVF   x95,W
+03E0:  IORWF  x94,W
+03E2:  IORWF  x93,W
+03E4:  IORWF  x92,W
+03E6:  BZ    0440
+03E8:  MOVLW  20
+03EA:  MOVWF  x9A
+03EC:  BCF    FD8.0
+03EE:  RLCF   x8E,F
+03F0:  RLCF   x8F,F
+03F2:  RLCF   x90,F
+03F4:  RLCF   x91,F
+03F6:  RLCF   x96,F
+03F8:  RLCF   x97,F
+03FA:  RLCF   x98,F
+03FC:  RLCF   x99,F
+03FE:  MOVF   x95,W
+0400:  SUBWF  x99,W
+0402:  BNZ   0414
+0404:  MOVF   x94,W
+0406:  SUBWF  x98,W
+0408:  BNZ   0414
+040A:  MOVF   x93,W
+040C:  SUBWF  x97,W
+040E:  BNZ   0414
+0410:  MOVF   x92,W
+0412:  SUBWF  x96,W
+0414:  BNC   0434
+0416:  MOVF   x92,W
+0418:  SUBWF  x96,F
+041A:  MOVF   x93,W
+041C:  BTFSS  FD8.0
+041E:  INCFSZ x93,W
+0420:  SUBWF  x97,F
+0422:  MOVF   x94,W
+0424:  BTFSS  FD8.0
+0426:  INCFSZ x94,W
+0428:  SUBWF  x98,F
+042A:  MOVF   x95,W
+042C:  BTFSS  FD8.0
+042E:  INCFSZ x95,W
+0430:  SUBWF  x99,F
+0432:  BSF    FD8.0
+0434:  RLCF   00,F
+0436:  RLCF   01,F
+0438:  RLCF   02,F
+043A:  RLCF   03,F
+043C:  DECFSZ x9A,F
+043E:  BRA    03EC
+0440:  MOVFF  96,FEF
+0444:  MOVFF  97,FEC
+0448:  MOVFF  98,FEC
+044C:  MOVFF  99,FEC
+0450:  GOTO   04F4 (RETURN)
+*
+0CCC:  MOVF   x90,W
+0CCE:  MULWF  x92
+0CD0:  MOVFF  FF3,01
+0CD4:  MOVFF  FF4,00
+0CD8:  MULWF  x93
+0CDA:  MOVF   FF3,W
+0CDC:  ADDWF  00,F
+0CDE:  MOVF   x91,W
+0CE0:  MULWF  x92
+0CE2:  MOVF   FF3,W
+0CE4:  ADDWFC 00,W
+0CE6:  MOVWF  02
+0CE8:  RETURN 0
+0CEA:  TBLRD*+
+0CEC:  MOVF   FF5,F
+0CEE:  BZ    0D08
+0CF0:  MOVFF  FF6,8E
+0CF4:  MOVFF  FF7,8F
+0CF8:  MOVFF  FF5,90
+0CFC:  RCALL  050E
+0CFE:  MOVFF  8E,FF6
+0D02:  MOVFF  8F,FF7
+0D06:  BRA    0CEA
+0D08:  GOTO   0DE8 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... //*******************************Fuses***************************************\\ 
+.................... //***************************************************************************\\ 
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES PUT                      //Power Up Timer 
+.................... #FUSES NOPLLEN                  // 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOXINST                  //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES NOIESO  
+.................... #FUSES MCLR 
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES PUT                      //No Power Up Timer 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES RESERVED                 //Used to set the reserved FUSE bits 
+....................  
+.................... #use delay(clock=12000000) 
+*
+025A:  CLRF   FEA
+025C:  MOVLW  8F
+025E:  MOVWF  FE9
+0260:  MOVF   FEF,W
+0262:  BZ    0280
+0264:  MOVLW  03
+0266:  MOVWF  01
+0268:  CLRF   00
+026A:  DECFSZ 00,F
+026C:  BRA    026A
+026E:  DECFSZ 01,F
+0270:  BRA    0268
+0272:  MOVLW  E3
+0274:  MOVWF  00
+0276:  DECFSZ 00,F
+0278:  BRA    0276
+027A:  NOP   
+027C:  DECFSZ FEF,F
+027E:  BRA    0264
+0280:  RETURN 0
+.................... #use rs232(baud=38400,parity=N,xmit=PIN_B7,rcv=PIN_B5,bits=8,stream=RS485) //Comunicacion con Wireless Board 
+*
+0602:  BTFSS  F9E.4
+0604:  BRA    0602
+0606:  MOVWF  FAD
+0608:  RETURN 0
+.................... #use rs232(baud=38400,parity=N,xmit=PIN_A0,rcv=PIN_A1,bits=8,stream=Pickit) //Comunicacion con Pickit para configuracion 
+*
+00D8:  BSF    F92.1
+00DA:  BTFSC  F80.1
+00DC:  BRA    00DA
+00DE:  MOVLW  08
+00E0:  MOVWF  00
+00E2:  CLRF   xA0
+00E4:  BSF    00.7
+00E6:  BRA    0104
+00E8:  BCF    00.7
+00EA:  BRA    0104
+00EC:  BCF    FD8.0
+00EE:  BTFSC  F80.1
+00F0:  BSF    FD8.0
+00F2:  RRCF   xA0,F
+00F4:  BSF    00.6
+00F6:  BRA    0104
+00F8:  BCF    00.6
+00FA:  DECFSZ 00,F
+00FC:  BRA    00EC
+00FE:  MOVFF  A0,01
+0102:  BRA    011C
+0104:  MOVLW  13
+0106:  BTFSC  00.7
+0108:  MOVLW  05
+010A:  MOVWF  01
+010C:  DECFSZ 01,F
+010E:  BRA    010C
+0110:  BRA    0112
+0112:  BTFSC  00.7
+0114:  BRA    00E8
+0116:  BTFSC  00.6
+0118:  BRA    00F8
+011A:  BRA    00EC
+011C:  GOTO   0128 (RETURN)
+*
+050E:  BCF    F92.0
+0510:  BCF    F89.0
+0512:  MOVLW  08
+0514:  MOVWF  01
+0516:  BRA    0518
+0518:  NOP   
+051A:  BSF    01.7
+051C:  BRA    053A
+051E:  BCF    01.7
+0520:  RRCF   x90,F
+0522:  BTFSC  FD8.0
+0524:  BSF    F89.0
+0526:  BTFSS  FD8.0
+0528:  BCF    F89.0
+052A:  BSF    01.6
+052C:  BRA    053A
+052E:  BCF    01.6
+0530:  DECFSZ 01,F
+0532:  BRA    0520
+0534:  BRA    0536
+0536:  NOP   
+0538:  BSF    F89.0
+053A:  MOVLW  13
+053C:  MOVWF  FE9
+053E:  DECFSZ FE9,F
+0540:  BRA    053E
+0542:  BRA    0544
+0544:  NOP   
+0546:  BTFSC  01.7
+0548:  BRA    051E
+054A:  BTFSC  01.6
+054C:  BRA    052E
+054E:  RETURN 0
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C0,rcv=PIN_A2,bits=8,stream=Sensor) //Comunicacion con Pickit para configuracion 
+*
+0156:  BSF    F92.2
+0158:  BTFSC  F80.2
+015A:  BRA    0158
+015C:  MOVLW  08
+015E:  MOVWF  00
+0160:  CLRF   xA4
+0162:  BSF    00.7
+0164:  BRA    0182
+0166:  BCF    00.7
+0168:  BRA    0182
+016A:  BCF    FD8.0
+016C:  BTFSC  F80.2
+016E:  BSF    FD8.0
+0170:  RRCF   xA4,F
+0172:  BSF    00.6
+0174:  BRA    0182
+0176:  BCF    00.6
+0178:  DECFSZ 00,F
+017A:  BRA    016A
+017C:  MOVFF  A4,01
+0180:  BRA    019A
+0182:  MOVLW  61
+0184:  BTFSC  00.7
+0186:  MOVLW  1A
+0188:  MOVWF  01
+018A:  DECFSZ 01,F
+018C:  BRA    018A
+018E:  BRA    0190
+0190:  BTFSC  00.7
+0192:  BRA    0166
+0194:  BTFSC  00.6
+0196:  BRA    0176
+0198:  BRA    016A
+019A:  GOTO   01BC (RETURN)
+....................  
+.................... #priority rda,ext1,ext2,timer1 
+....................  
+.................... #define Led_Status     PIN_C1 
+.................... #define DRV_485        PIN_B6 
+.................... #define DRV_Sensor     PIN_B4 
+.................... #define Pin_Flotador   PIN_C2 
+.................... #define Relay_Izq      PIN_C5 
+.................... #define Relay_Der      PIN_C4 
+.................... //*********************************Variables*********************************\\ 
+.................... //***************************************************************************\\ 
+.................... int8 Blink=0; 
+.................... int8 Tiempo=0; 
+.................... int8 Blink_Flotador=0; 
+.................... int8 Tiempo_Blink=0; 
+.................... int8 Tiempo_Envio_CMD;  //Tiempo Para el envio del comando status 
+.................... int8 Num_Serie1;        //Numero de serie de la tarjeta 1er Byte 
+.................... int8 Metros_Cubicos_Cisterna=0XFE; //sin uso 
+.................... int8 Numero_de_Cisterna=0XFE;       //sin uso 
+....................  
+.................... //*********************Variables para calculos de cisternas******************\\ 
+.................... // Las variables de 8 bits se almacenan en EEprom del micro, 
+.................... // Las variables de 16 bits se utilizan para realizar los calculos 
+....................  
+.................... int16 Distancia_Medida=0; 
+.................... int8 Distancia_Medida_High=0; 
+.................... int8 Distancia_Medida_Low=0; 
+.................... int16 Distancia=0;         //se utiliza para pasar el valor de distancia medida de 16 bits a 2 variables de 8 bits 
+.................... //la medida del sensor llega en 4 bytes, que indican la distancia milimetros de 300 a 4999 
+.................... //Las siguientes variables se utilizaron para juntas los 4 bytes para lograr la distancia final en una variable de 16 bits Distancia_Medida 
+.................... int16 Medida_1;     
+.................... int16 Medida_2; 
+.................... int16 Medida_3; 
+.................... int16 Medida_4; 
+....................  
+.................... int16 Distancia_Vacio; 
+.................... int8  Distancia_Vacio_High; 
+.................... int8  Distancia_Vacio_Low; 
+....................  
+.................... int16 Distancia_lleno; 
+.................... int8  Distancia_Lleno_High=0X01; 
+.................... int8  Distancia_Lleno_Low=0X2C; 
+....................  
+.................... //***************************************************************************\\ 
+.................... int8 Flotador=0;        //Estado del flotador 
+.................... int8 Respuesta;         //Bytes de Respuesta de algun CMD recibido, 00= Rechazado, 01= Aceptado 
+.................... int8 CMD_Ejecutado;     //indica el comando del cual se esta dando respuesta 
+.................... int8 Segundos=0;        //Temporizador 
+.................... int8 Estado_Relays=0;   //Byte Para manipular el estado de los relays on board 
+....................  
+.................... int32 Calculo1=0;   
+.................... int32 Calculo2=0; 
+.................... int8 Porcentaje=0; 
+.................... //****************************Variables com serial***************************\\ 
+.................... //int8 Timeout=0; 
+.................... int8 Char_Recibido_Pickit=0; 
+.................... int8 Char_Recibido_RS485=0; 
+.................... int8 Indice_Pickit=0; 
+.................... int8 Indice_RS485=0; 
+.................... int8 Indice_Sensor=0; 
+.................... char Pickitbuff[30]; 
+.................... char RS485buff[30]; 
+.................... char Sensorbuff[10]; 
+.................... int1 F_CMD_Completo_Pickit=0; 
+.................... int1 F_CMD_Completo_RS485=0; 
+.................... int1 F_CMD_Completo_Sensor=0; 
+....................  
+.................... //*****************************Interrupcion Timer 1**************************\\ 
+.................... // Cada 100 ms 
+.................... #INT_TIMER1 
+.................... void  TIMER1_isr(void)  
+.................... { 
+....................    set_timer1(28036); 
+*
+00BA:  MOVLW  6D
+00BC:  MOVWF  FCF
+00BE:  MOVLW  84
+00C0:  MOVWF  FCE
+....................    Blink++; 
+00C2:  INCF   16,F
+....................    Blink_Flotador++; 
+00C4:  INCF   18,F
+....................    Tiempo++;  
+00C6:  INCF   17,F
+....................    if(Tiempo>=10) 
+00C8:  MOVF   17,W
+00CA:  SUBLW  09
+00CC:  BC    00D2
+....................    { 
+....................       Tiempo=0; 
+00CE:  CLRF   17
+....................       Segundos++; 
+00D0:  INCF   37,F
+....................    } 
+.................... } 
+....................  
+.................... //***************Interrupción por serial del pickit***************************\\ 
+00D2:  BCF    F9E.0
+00D4:  GOTO   0078
+.................... #INT_EXT1    
+.................... void  EXT1_isr(void)  
+.................... { 
+....................    Char_Recibido_Pickit=0x00; 
+*
+0120:  CLRF   42
+....................   if(kbhit(pickit)) 
+0122:  BTFSC  F80.1
+0124:  BRA    0150
+....................    { 
+....................      Char_Recibido_Pickit=fgetc(pickit);                 
+0126:  BRA    00D8
+0128:  MOVFF  01,42
+....................      Pickitbuff[Indice_Pickit++]=Char_Recibido_Pickit;  
+012C:  MOVF   44,W
+012E:  INCF   44,F
+0130:  CLRF   03
+0132:  ADDLW  47
+0134:  MOVWF  FE9
+0136:  MOVLW  00
+0138:  ADDWFC 03,W
+013A:  MOVWF  FEA
+013C:  MOVFF  42,FEF
+....................       
+....................      if(Indice_Pickit>29) 
+0140:  MOVF   44,W
+0142:  SUBLW  1D
+0144:  BC    0148
+....................      { 
+....................          Indice_Pickit=0; 
+0146:  CLRF   44
+....................      } 
+....................        if (Char_Recibido_Pickit==0X3F)   
+0148:  MOVF   42,W
+014A:  SUBLW  3F
+014C:  BNZ   0150
+....................          { 
+....................             F_CMD_Completo_Pickit=1; 
+014E:  BSF    x8D.0
+....................          }                                                                                                                
+....................    } 
+.................... } 
+.................... //***************Interrupción por serial del pickit***************************\\ 
+0150:  BCF    FF0.0
+0152:  GOTO   0078
+.................... #INT_EXT2    
+.................... void  EXT2_isr(void)  
+.................... { 
+....................   if(kbhit(Sensor)) 
+*
+019E:  BTFSC  F80.2
+01A0:  BRA    01EA
+....................    { 
+....................      Sensorbuff[Indice_Sensor++]=fgetc(Sensor);                 
+01A2:  MOVF   46,W
+01A4:  INCF   46,F
+01A6:  CLRF   03
+01A8:  ADDLW  83
+01AA:  MOVWF  FE9
+01AC:  MOVLW  00
+01AE:  ADDWFC 03,W
+01B0:  MOVWF  FEA
+01B2:  MOVFF  FEA,A3
+01B6:  MOVFF  FE9,A2
+01BA:  BRA    0156
+01BC:  MOVFF  A3,FEA
+01C0:  MOVFF  A2,FE9
+01C4:  MOVFF  01,FEF
+....................      if(Indice_Sensor>9) 
+01C8:  MOVF   46,W
+01CA:  SUBLW  09
+01CC:  BC    01D0
+....................      { 
+....................          Indice_Sensor=0; 
+01CE:  CLRF   46
+....................      } 
+....................      if (Sensorbuff[Indice_Sensor-1]==0X0D)   
+01D0:  MOVLW  01
+01D2:  SUBWF  46,W
+01D4:  CLRF   03
+01D6:  ADDLW  83
+01D8:  MOVWF  FE9
+01DA:  MOVLW  00
+01DC:  ADDWFC 03,W
+01DE:  MOVWF  FEA
+01E0:  MOVF   FEF,W
+01E2:  SUBLW  0D
+01E4:  BNZ   01EA
+....................      { 
+....................          F_CMD_Completo_Sensor=1; 
+01E6:  BSF    x8D.2
+....................          Indice_Sensor=0; 
+01E8:  CLRF   46
+....................      }   
+....................    } 
+.................... } 
+.................... //************************Interrupcion serial 485***************************\\ 
+01EA:  BCF    FF0.1
+01EC:  GOTO   0078
+.................... #INT_RDA 
+.................... void  RDA_isr(void)  
+.................... { 
+....................    Char_Recibido_RS485=0x00; 
+01F0:  CLRF   43
+....................   if(kbhit(RS485)) 
+01F2:  BTFSS  F9E.5
+01F4:  BRA    0222
+....................    { 
+....................      Char_Recibido_RS485=fgetc(RS485);                // lo descargo 
+01F6:  BTFSS  F9E.5
+01F8:  BRA    01F6
+01FA:  MOVFF  FAE,43
+....................      RS485buff[Indice_RS485++]=Char_Recibido_RS485;   // lo añado al buffer 
+01FE:  MOVF   45,W
+0200:  INCF   45,F
+0202:  CLRF   03
+0204:  ADDLW  65
+0206:  MOVWF  FE9
+0208:  MOVLW  00
+020A:  ADDWFC 03,W
+020C:  MOVWF  FEA
+020E:  MOVFF  43,FEF
+....................       
+....................      if(Indice_RS485>29) 
+0212:  MOVF   45,W
+0214:  SUBLW  1D
+0216:  BC    021A
+....................      { 
+....................          Indice_RS485=0; 
+0218:  CLRF   45
+....................      } 
+....................       if (Char_Recibido_RS485==0X3F)   
+021A:  MOVF   43,W
+021C:  SUBLW  3F
+021E:  BNZ   0222
+....................          { 
+....................             F_CMD_Completo_RS485=1; 
+0220:  BSF    x8D.1
+....................          }                                                                                                           
+....................    }   
+0222:  BCF    F9E.5
+0224:  GOTO   0078
+.................... } 
+....................  
+.................... void Leer_Bytes_de_Config(void) 
+.................... { 
+....................    delay_ms(1);      
+*
+0282:  MOVLW  01
+0284:  MOVWF  x8F
+0286:  RCALL  025A
+....................    Tiempo_Envio_CMD = read_eeprom (0); 
+0288:  MOVFF  FF2,8F
+028C:  BCF    FF2.7
+028E:  CLRF   FA9
+0290:  BCF    FA6.6
+0292:  BCF    FA6.7
+0294:  BSF    FA6.0
+0296:  MOVF   FA8,W
+0298:  BTFSC  x8F.7
+029A:  BSF    FF2.7
+029C:  MOVWF  1A
+....................    Num_Serie1 = read_eeprom (1);    //En la localidad 1 se encuentra el 1er byte del numero de serie 
+029E:  MOVFF  FF2,8F
+02A2:  BCF    FF2.7
+02A4:  MOVLW  01
+02A6:  MOVWF  FA9
+02A8:  BCF    FA6.6
+02AA:  BCF    FA6.7
+02AC:  BSF    FA6.0
+02AE:  MOVF   FA8,W
+02B0:  BTFSC  x8F.7
+02B2:  BSF    FF2.7
+02B4:  MOVWF  1B
+....................    Estado_Relays = read_eeprom(2); 
+02B6:  MOVFF  FF2,8F
+02BA:  BCF    FF2.7
+02BC:  MOVLW  02
+02BE:  MOVWF  FA9
+02C0:  BCF    FA6.6
+02C2:  BCF    FA6.7
+02C4:  BSF    FA6.0
+02C6:  MOVF   FA8,W
+02C8:  BTFSC  x8F.7
+02CA:  BSF    FF2.7
+02CC:  MOVWF  38
+....................    
+....................    Distancia_Vacio_High = read_eeprom (16); 
+02CE:  MOVFF  FF2,8F
+02D2:  BCF    FF2.7
+02D4:  MOVLW  10
+02D6:  MOVWF  FA9
+02D8:  BCF    FA6.6
+02DA:  BCF    FA6.7
+02DC:  BSF    FA6.0
+02DE:  MOVF   FA8,W
+02E0:  BTFSC  x8F.7
+02E2:  BSF    FF2.7
+02E4:  MOVWF  2E
+....................    Distancia_Vacio_Low = read_eeprom(17); 
+02E6:  MOVFF  FF2,8F
+02EA:  BCF    FF2.7
+02EC:  MOVLW  11
+02EE:  MOVWF  FA9
+02F0:  BCF    FA6.6
+02F2:  BCF    FA6.7
+02F4:  BSF    FA6.0
+02F6:  MOVF   FA8,W
+02F8:  BTFSC  x8F.7
+02FA:  BSF    FF2.7
+02FC:  MOVWF  2F
+....................    Distancia_Lleno_High = read_eeprom (18); 
+02FE:  MOVFF  FF2,8F
+0302:  BCF    FF2.7
+0304:  MOVLW  12
+0306:  MOVWF  FA9
+0308:  BCF    FA6.6
+030A:  BCF    FA6.7
+030C:  BSF    FA6.0
+030E:  MOVF   FA8,W
+0310:  BTFSC  x8F.7
+0312:  BSF    FF2.7
+0314:  MOVWF  32
+....................    Distancia_Lleno_Low = read_eeprom (19); 
+0316:  MOVFF  FF2,8F
+031A:  BCF    FF2.7
+031C:  MOVLW  13
+031E:  MOVWF  FA9
+0320:  BCF    FA6.6
+0322:  BCF    FA6.7
+0324:  BSF    FA6.0
+0326:  MOVF   FA8,W
+0328:  BTFSC  x8F.7
+032A:  BSF    FF2.7
+032C:  MOVWF  33
+....................  
+.................... // Convierto variables int8 a int16 
+....................    Distancia_Vacio = (Distancia_Vacio_High<<8); 
+032E:  MOVFF  2E,2D
+0332:  CLRF   2C
+....................    Distancia_Vacio += Distancia_Vacio_Low;     
+0334:  MOVF   2F,W
+0336:  ADDWF  2C,F
+0338:  MOVLW  00
+033A:  ADDWFC 2D,F
+....................    Distancia_lleno = (Distancia_Lleno_High<<8); 
+033C:  MOVFF  32,31
+0340:  CLRF   30
+....................    Distancia_lleno += Distancia_Lleno_Low;    
+0342:  MOVF   33,W
+0344:  ADDWF  30,F
+0346:  MOVLW  00
+0348:  ADDWFC 31,F
+034A:  RETURN 0
+.................... } 
+....................  
+.................... //****************Funcion que envia el estado por el Pickit******************\\ 
+.................... void Envia_Estado_Pickit(void) 
+.................... { 
+....................        fputc(0X23,Pickit); 
+*
+0550:  MOVLW  23
+0552:  MOVWF  x90
+0554:  RCALL  050E
+....................        fputc(0X5E,Pickit); 
+0556:  MOVLW  5E
+0558:  MOVWF  x90
+055A:  RCALL  050E
+....................        //fputc(Num_Serie1,Pickit); 
+....................        //fputc(0X00,pickit); 
+....................        //fputc(Estado_Relays,Pickit); 
+....................        //fputc(Flotador,Pickit); 
+....................        fputc(Distancia_Medida_High,Pickit); 
+055C:  MOVFF  20,90
+0560:  RCALL  050E
+....................        fputc(Distancia_Medida_Low,Pickit); 
+0562:  MOVFF  21,90
+0566:  RCALL  050E
+....................        fputc(Distancia_Vacio_High,Pickit); 
+0568:  MOVFF  2E,90
+056C:  RCALL  050E
+....................        fputc(Distancia_Vacio_Low,Pickit); 
+056E:  MOVFF  2F,90
+0572:  RCALL  050E
+....................        fputc(Distancia_Lleno_High,Pickit); 
+0574:  MOVFF  32,90
+0578:  RCALL  050E
+....................        fputc(Distancia_Lleno_Low,Pickit); 
+057A:  MOVFF  33,90
+057E:  RCALL  050E
+....................        fputc(Porcentaje,Pickit); 
+0580:  MOVFF  41,90
+0584:  RCALL  050E
+....................        //fputc(Metros_Cubicos_Cisterna,Pickit); 
+....................        //fputc(Numero_de_Cisterna,Pickit); 
+....................        fputc(0X3C,Pickit); 
+0586:  MOVLW  3C
+0588:  MOVWF  x90
+058A:  RCALL  050E
+....................        fputc(0X3F,Pickit); 
+058C:  MOVLW  3F
+058E:  MOVWF  x90
+0590:  RCALL  050E
+0592:  RETURN 0
+.................... } 
+....................  
+.................... //*****************Funcion que envia el estado por el 485*******************\\ 
+.................... void Envia_Estado_RS485(void) 
+.................... { 
+....................        output_high(DRV_485);                                     //Envia   rs-485 
+*
+0936:  BCF    F93.6
+0938:  BSF    F8A.6
+....................        delay_ms(1); 
+093A:  MOVLW  01
+093C:  MOVWF  x8F
+093E:  RCALL  025A
+....................        fputc(0X23,RS485); 
+0940:  MOVLW  23
+0942:  RCALL  0602
+....................        fputc(0X5E,RS485); 
+0944:  MOVLW  5E
+0946:  RCALL  0602
+....................        fputc(Num_Serie1,RS485); 
+0948:  MOVF   1B,W
+094A:  RCALL  0602
+....................        fputc(0X00,RS485); 
+094C:  MOVLW  00
+094E:  RCALL  0602
+....................        fputc(Estado_Relays,RS485); 
+0950:  MOVF   38,W
+0952:  RCALL  0602
+....................        fputc(Flotador,RS485); 
+0954:  MOVF   34,W
+0956:  RCALL  0602
+....................        fputc(Distancia_Medida_High,Pickit); 
+0958:  MOVFF  20,90
+095C:  RCALL  050E
+....................        fputc(Distancia_Medida_Low,Pickit); 
+095E:  MOVFF  21,90
+0962:  RCALL  050E
+....................        fputc(Distancia_Vacio_High,Pickit); 
+0964:  MOVFF  2E,90
+0968:  RCALL  050E
+....................        fputc(Distancia_Vacio_Low,Pickit); 
+096A:  MOVFF  2F,90
+096E:  RCALL  050E
+....................        fputc(Distancia_Lleno_High,Pickit); 
+0970:  MOVFF  32,90
+0974:  RCALL  050E
+....................        fputc(Distancia_Lleno_Low,Pickit); 
+0976:  MOVFF  33,90
+097A:  RCALL  050E
+....................        fputc(Porcentaje,RS485); 
+097C:  MOVF   41,W
+097E:  RCALL  0602
+....................        fputc(Metros_Cubicos_Cisterna,RS485); 
+0980:  MOVF   1C,W
+0982:  RCALL  0602
+....................        fputc(Numero_de_Cisterna,RS485); 
+0984:  MOVF   1D,W
+0986:  RCALL  0602
+....................        fputc(0X3C,RS485); 
+0988:  MOVLW  3C
+098A:  RCALL  0602
+....................        fputc(0X3F,RS485); 
+098C:  MOVLW  3F
+098E:  RCALL  0602
+....................        delay_ms(3); 
+0990:  MOVLW  03
+0992:  MOVWF  x8F
+0994:  RCALL  025A
+....................        output_low(DRV_485); 
+0996:  BCF    F93.6
+0998:  BCF    F8A.6
+099A:  GOTO   0CC2 (RETURN)
+.................... } 
+....................  
+.................... //**************Funcion para cambiar el estado de los relays*****************\\ 
+.................... void Actualiza_Estado_Relays(void) 
+.................... { 
+....................    switch(Estado_Relays) 
+*
+05BA:  MOVF   38,W
+05BC:  XORLW  00
+05BE:  BZ    05CE
+05C0:  XORLW  01
+05C2:  BZ    05D8
+05C4:  XORLW  11
+05C6:  BZ    05E2
+05C8:  XORLW  01
+05CA:  BZ    05EC
+05CC:  BRA    05F6
+....................    { 
+....................       case 0X00: 
+....................             output_low(Relay_Izq); 
+05CE:  BCF    F94.5
+05D0:  BCF    F8B.5
+....................             output_low(Relay_Der); 
+05D2:  BCF    F94.4
+05D4:  BCF    F8B.4
+....................             break; 
+05D6:  BRA    05FE
+....................       case 0x01: 
+....................             output_low(Relay_Izq); 
+05D8:  BCF    F94.5
+05DA:  BCF    F8B.5
+....................             output_high(Relay_Der); 
+05DC:  BCF    F94.4
+05DE:  BSF    F8B.4
+....................             break; 
+05E0:  BRA    05FE
+....................       case 0x10: 
+....................             output_high(Relay_Izq); 
+05E2:  BCF    F94.5
+05E4:  BSF    F8B.5
+....................             output_low(Relay_Der); 
+05E6:  BCF    F94.4
+05E8:  BCF    F8B.4
+....................             break; 
+05EA:  BRA    05FE
+....................       case 0x11: 
+....................             output_high(Relay_Izq); 
+05EC:  BCF    F94.5
+05EE:  BSF    F8B.5
+....................             output_high(Relay_Der); 
+05F0:  BCF    F94.4
+05F2:  BSF    F8B.4
+....................             break; 
+05F4:  BRA    05FE
+....................       default: 
+....................             output_low(Relay_Izq); 
+05F6:  BCF    F94.5
+05F8:  BCF    F8B.5
+....................             output_low(Relay_Der); 
+05FA:  BCF    F94.4
+05FC:  BCF    F8B.4
+....................    }         
+05FE:  GOTO   0F74 (RETURN)
+.................... } 
+.................... //*******************Verifica el estado del flotador*************************\\ 
+.................... void Estado_Flotador(void) 
+.................... { 
+.................... //    if(input(Pin_Flotador))  == flotador NC 
+.................... //    if(!input(Pin_Flotador)) == flotador NA 
+....................  
+....................       if(input(Pin_Flotador)) 
+*
+034C:  BSF    F94.2
+034E:  BTFSS  F82.2
+0350:  BRA    035C
+....................       { 
+....................          Flotador=0x01;           
+0352:  MOVLW  01
+0354:  MOVWF  34
+....................          Tiempo_Blink=2;         //Blink cada 200 ms led status 
+0356:  MOVLW  02
+0358:  MOVWF  19
+....................       } 
+035A:  BRA    0362
+....................       else  
+....................       { 
+....................          Flotador=0x00; 
+035C:  CLRF   34
+....................          Tiempo_Blink=10;     //Blink cada segundo led status 
+035E:  MOVLW  0A
+0360:  MOVWF  19
+....................       }  
+0362:  GOTO   05A4 (RETURN)
+.................... } 
+.................... //****************************Lee el estado del ADC**************************\\ 
+.................... //activa el pin DRV_Sensor, para avisarle al sensor ultrasonico que realice una medicion, 
+.................... //La funcion de interrupcion externa 2 se encarga de recibir el dato enviado por el sensor 
+.................... void Lee_Distancia(void)      //Lee_ADC 
+.................... { 
+....................    Output_high(DRV_Sensor); 
+0366:  BCF    F93.4
+0368:  BSF    F8A.4
+036A:  GOTO   05A6 (RETURN)
+....................    //fputc(0XAA,Pickit); 
+....................     
+.................... } 
+....................  
+.................... //****************Calcula el porcentaje de agua en cisterna******************\\ 
+.................... //Si se han configurado el valor del adc con cisterna llena y vacia, se puede realizar el 
+.................... //calculo del porcentaje del valor leido. 
+....................  
+.................... void Calcula_Nivel(void) 
+.................... {    
+....................     if(Distancia_Vacio_High != 0XFF && Distancia_Vacio_Low != 0XFF) //si estan configurados los varores del adc vacio y lleno 
+*
+0454:  INCFSZ 2E,W
+0456:  BRA    045A
+0458:  BRA    050A
+045A:  INCFSZ 2F,W
+045C:  BRA    0460
+045E:  BRA    050A
+....................     {     
+....................          if(Distancia_Medida >= Distancia_Lleno && Distancia_Medida <= Distancia_Vacio)   //si esta dentro del rango configurado 
+0460:  MOVF   31,W
+0462:  SUBWF  1F,W
+0464:  BNC   04FA
+0466:  BNZ   046E
+0468:  MOVF   30,W
+046A:  SUBWF  1E,W
+046C:  BNC   04FA
+046E:  MOVF   1F,W
+0470:  SUBWF  2D,W
+0472:  BNC   04FA
+0474:  BNZ   047C
+0476:  MOVF   1E,W
+0478:  SUBWF  2C,W
+047A:  BNC   04FA
+....................          { 
+....................             Calculo1 = (( int32)(Distancia_Vacio -Distancia_Medida)*(int32)(0x64)); 
+047C:  MOVF   1E,W
+047E:  SUBWF  2C,W
+0480:  MOVWF  00
+0482:  MOVF   1F,W
+0484:  SUBWFB 2D,W
+0486:  MOVWF  03
+0488:  MOVFF  00,8E
+048C:  MOVWF  x8F
+048E:  CLRF   x90
+0490:  CLRF   x91
+0492:  MOVFF  91,95
+0496:  MOVFF  90,94
+049A:  MOVWF  x93
+049C:  MOVFF  00,92
+04A0:  CLRF   x99
+04A2:  CLRF   x98
+04A4:  CLRF   x97
+04A6:  MOVLW  64
+04A8:  MOVWF  x96
+04AA:  BRA    036E
+04AC:  MOVFF  03,3C
+04B0:  MOVFF  02,3B
+04B4:  MOVFF  01,3A
+04B8:  MOVFF  00,39
+....................             Calculo2 = (( int32)(Distancia_Vacio - Distancia_Lleno)); 
+04BC:  MOVF   30,W
+04BE:  SUBWF  2C,W
+04C0:  MOVWF  00
+04C2:  MOVF   31,W
+04C4:  SUBWFB 2D,W
+04C6:  MOVFF  00,3D
+04CA:  MOVWF  3E
+04CC:  CLRF   3F
+04CE:  CLRF   40
+....................             Porcentaje = (int8 )(Calculo1/Calculo2); 
+04D0:  BCF    FD8.1
+04D2:  MOVFF  3C,91
+04D6:  MOVFF  3B,90
+04DA:  MOVFF  3A,8F
+04DE:  MOVFF  39,8E
+04E2:  MOVFF  40,95
+04E6:  MOVFF  3F,94
+04EA:  MOVFF  3E,93
+04EE:  MOVFF  3D,92
+04F2:  BRA    03C4
+04F4:  MOVFF  00,41
+....................          } 
+04F8:  BRA    050A
+....................          else if(Distancia_Medida > Distancia_Vacio)     //Si la distancia medida es mayor a la maxima configurada para Distancia vacia, no ajusta el valor solo manda procentaje 0 
+04FA:  MOVF   2D,W
+04FC:  SUBWF  1F,W
+04FE:  BNC   050A
+0500:  BNZ   0508
+0502:  MOVF   1E,W
+0504:  SUBWF  2C,W
+0506:  BC    050A
+....................            { 
+....................                Porcentaje=0X00; 
+0508:  CLRF   41
+....................            } 
+....................     } 
+050A:  GOTO   05A8 (RETURN)
+.................... } 
+....................  
+.................... //*****************Funcion que atiende las temporizaciones*******************\\ 
+.................... void Temporizaciones(void) 
+.................... { 
+.................... /* 
+....................    if(Segundos>=Tiempo_Envio_CMD && Tiempo_Envio_CMD != 0 ) // 
+....................       { 
+....................          Envia_Estado_Pickit(); 
+....................          Tiempo=0;            //contador incrementa cada 100 ms 
+....................          Segundos=0;          //Contador incrementa cada 1 s 
+....................       }*/ 
+....................    if(Blink>=10) 
+*
+0594:  MOVF   16,W
+0596:  SUBLW  09
+0598:  BC    05AA
+....................       { 
+....................          Blink=0; 
+059A:  CLRF   16
+....................          Indice_Pickit=0; 
+059C:  CLRF   44
+....................          Indice_RS485=0; 
+059E:  CLRF   45
+....................          Indice_Sensor=0; 
+05A0:  CLRF   46
+....................          Estado_Flotador(); 
+05A2:  BRA    034C
+....................          Lee_Distancia(); 
+05A4:  BRA    0366
+....................          Calcula_Nivel(); 
+05A6:  BRA    0454
+....................          Envia_Estado_Pickit(); 
+05A8:  RCALL  0550
+....................       } 
+....................     if(Blink_Flotador>=Tiempo_Blink) 
+05AA:  MOVF   19,W
+05AC:  SUBWF  18,W
+05AE:  BNC   05B6
+....................       { 
+....................          Blink_Flotador=0; 
+05B0:  CLRF   18
+....................          output_toggle(Led_Status); 
+05B2:  BCF    F94.1
+05B4:  BTG    F8B.1
+....................       } 
+05B6:  GOTO   0F70 (RETURN)
+.................... } 
+.................... //****************************************************************************\\ 
+.................... void Verifica_CMD_Pickit(void) 
+.................... { 
+....................    if(F_CMD_Completo_Pickit==1) 
+*
+060A:  BTFSS  x8D.0
+060C:  BRA    0932
+....................    { 
+....................       F_CMD_Completo_Pickit=0; 
+060E:  BCF    x8D.0
+....................        
+....................        if(Pickitbuff[0]==0X23)      //Tiene llave de inicio 1er byte 
+0610:  MOVF   47,W
+0612:  SUBLW  23
+0614:  BTFSS  FD8.2
+0616:  BRA    08FC
+....................        { 
+....................          if(Pickitbuff[1]==0X5E)    //Tiene llave de inicio 2do byte 
+0618:  MOVF   48,W
+061A:  SUBLW  5E
+061C:  BTFSS  FD8.2
+061E:  BRA    08FC
+....................          { 
+....................              if(Pickitbuff[2]==0X02) //Es CMD para la wireless Board, solo reeenvia por el aurt RS485 
+0620:  MOVF   49,W
+0622:  SUBLW  02
+0624:  BNZ   065C
+....................             { 
+....................                         output_high(DRV_485);                                     //Envia   rs-485 
+0626:  BCF    F93.6
+0628:  BSF    F8A.6
+....................                         delay_ms(1); 
+062A:  MOVLW  01
+062C:  MOVWF  x8F
+062E:  RCALL  025A
+....................                        for(int i=0;i<Indice_Pickit;i++) 
+0630:  CLRF   x8E
+0632:  MOVF   44,W
+0634:  SUBWF  x8E,W
+0636:  BC    0652
+....................                        { 
+....................                            fputc(Pickitbuff[i],RS485);    
+0638:  CLRF   03
+063A:  MOVF   x8E,W
+063C:  ADDLW  47
+063E:  MOVWF  FE9
+0640:  MOVLW  00
+0642:  ADDWFC 03,W
+0644:  MOVWF  FEA
+0646:  MOVFF  FEF,8F
+064A:  MOVF   x8F,W
+064C:  RCALL  0602
+064E:  INCF   x8E,F
+0650:  BRA    0632
+....................                        } 
+....................                        delay_ms(3); 
+0652:  MOVLW  03
+0654:  MOVWF  x8F
+0656:  RCALL  025A
+....................                         output_low(DRV_485);  
+0658:  BCF    F93.6
+065A:  BCF    F8A.6
+....................                        //Indice_Pickit=0; 
+....................                        break; 
+....................             } 
+....................             if(Pickitbuff[2]==0X01) //Es CMD para sensor Board, procede a verificar el comando. 
+065C:  DECFSZ 49,W
+065E:  BRA    08FC
+....................             { 
+....................                     // if(Pickitbuff[3] == Num_Serie1)      
+....................                        switch(Pickitbuff[4])  // verifica el byte de comandos [3] 
+0660:  MOVF   4B,W
+0662:  BZ    0680
+0664:  XORLW  01
+0666:  BZ    0692
+0668:  XORLW  03
+066A:  BZ    06EC
+066C:  XORLW  01
+066E:  BTFSC  FD8.2
+0670:  BRA    07E0
+0672:  XORLW  07
+0674:  BTFSC  FD8.2
+0676:  BRA    0826
+0678:  XORLW  01
+067A:  BTFSC  FD8.2
+067C:  BRA    08E2
+067E:  BRA    08F8
+....................                        { 
+....................                         
+....................                            case 0:        //Solicitud del estado del sistema 
+....................                                  { 
+....................                                   
+....................                                     if(Pickitbuff[5]==0X3C && Pickitbuff[6]==0X3F) 
+0680:  MOVF   4C,W
+0682:  SUBLW  3C
+0684:  BNZ   0690
+0686:  MOVF   4D,W
+0688:  SUBLW  3F
+068A:  BNZ   0690
+....................                                     { 
+....................                                        Envia_Estado_Pickit(); 
+068C:  RCALL  0550
+....................                                        goto Salida; 
+068E:  BRA    092C
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+0690:  BRA    08FC
+....................                            case 1:  //Comando para modificar el tiempo entre comandos de status 
+....................                                  { 
+....................                                    if(Pickitbuff[6]==0X3C && Pickitbuff[7]==0X3F) 
+0692:  MOVF   4D,W
+0694:  SUBLW  3C
+0696:  BNZ   06EA
+0698:  MOVF   4E,W
+069A:  SUBLW  3F
+069C:  BNZ   06EA
+....................                                    { 
+....................                                        if(Pickitbuff[5]<0xF0) //0x019= 25 en decimal, multiplicado por 10=250  
+069E:  MOVF   4C,W
+06A0:  SUBLW  EF
+06A2:  BNC   06E4
+....................                                        { 
+....................                                           write_eeprom(0,(Pickitbuff[5]));// el dato recibido esta expresado en segundos  
+06A4:  MOVF   FF2,W
+06A6:  MOVWF  00
+06A8:  BCF    FF2.7
+06AA:  CLRF   FA9
+06AC:  MOVFF  4C,FA8
+06B0:  BCF    FA6.6
+06B2:  BCF    FA6.7
+06B4:  BSF    FA6.2
+06B6:  MOVLB  F
+06B8:  MOVLW  55
+06BA:  MOVWF  FA7
+06BC:  MOVLW  AA
+06BE:  MOVWF  FA7
+06C0:  BSF    FA6.1
+06C2:  BTFSC  FA6.1
+06C4:  BRA    06C2
+06C6:  BCF    FA6.2
+06C8:  MOVF   00,W
+06CA:  IORWF  FF2,F
+....................                                           delay_ms(1); 
+06CC:  MOVLW  01
+06CE:  MOVLB  0
+06D0:  MOVWF  x8F
+06D2:  RCALL  025A
+....................                                           Tiempo_Envio_CMD = Pickitbuff[5]; 
+06D4:  MOVFF  4C,1A
+....................                                           Tiempo=0; 
+06D8:  CLRF   17
+....................                                           Segundos=0; 
+06DA:  CLRF   37
+....................                                           Respuesta=1; 
+06DC:  MOVLW  01
+06DE:  MOVWF  35
+....................                                           CMD_Ejecutado=1; 
+06E0:  MOVWF  36
+....................                                        //goto Respuesta_CMD; 
+....................                                        } 
+06E2:  BRA    06EA
+....................                                     else 
+....................                                        {    
+....................                                         CMD_Ejecutado=1; 
+06E4:  MOVLW  01
+06E6:  MOVWF  36
+....................                                           Respuesta=0; 
+06E8:  CLRF   35
+....................                                        //goto Respuesta_CMD; 
+....................                                        } 
+....................                                    } 
+....................                                  } 
+....................                                  break; 
+06EA:  BRA    08FC
+....................                             case 2:  //Comando para activar relays onboard 
+....................                                  { 
+....................                                  if(Pickitbuff[6]==0X3C && Pickitbuff[7]==0X3F) 
+06EC:  MOVF   4D,W
+06EE:  SUBLW  3C
+06F0:  BTFSS  FD8.2
+06F2:  BRA    07DE
+06F4:  MOVF   4E,W
+06F6:  SUBLW  3F
+06F8:  BNZ   07DE
+....................                                    { 
+....................                                        CMD_Ejecutado=2; 
+06FA:  MOVLW  02
+06FC:  MOVWF  36
+....................                                        Respuesta=0; 
+06FE:  CLRF   35
+....................                                        if(Pickitbuff[5]==0x00) 
+0700:  MOVF   4C,F
+0702:  BNZ   0734
+....................                                        { 
+....................                                           Estado_Relays=0X00; 
+0704:  CLRF   38
+....................                                           Respuesta=1; 
+0706:  MOVLW  01
+0708:  MOVWF  35
+....................                                            write_eeprom(2,0X00); 
+070A:  MOVF   FF2,W
+070C:  MOVWF  00
+070E:  BCF    FF2.7
+0710:  MOVLW  02
+0712:  MOVWF  FA9
+0714:  CLRF   FA8
+0716:  BCF    FA6.6
+0718:  BCF    FA6.7
+071A:  BSF    FA6.2
+071C:  MOVLB  F
+071E:  MOVLW  55
+0720:  MOVWF  FA7
+0722:  MOVLW  AA
+0724:  MOVWF  FA7
+0726:  BSF    FA6.1
+0728:  BTFSC  FA6.1
+072A:  BRA    0728
+072C:  BCF    FA6.2
+072E:  MOVF   00,W
+0730:  IORWF  FF2,F
+0732:  MOVLB  0
+....................                                        } 
+....................                                        if(Pickitbuff[5]==0X10) 
+0734:  MOVF   4C,W
+0736:  SUBLW  10
+0738:  BNZ   076E
+....................                                        { 
+....................                                           Estado_Relays=0X10; 
+073A:  MOVLW  10
+073C:  MOVWF  38
+....................                                           Respuesta=1; 
+073E:  MOVLW  01
+0740:  MOVWF  35
+....................                                            write_eeprom(2,0X10); 
+0742:  MOVF   FF2,W
+0744:  MOVWF  00
+0746:  BCF    FF2.7
+0748:  MOVLW  02
+074A:  MOVWF  FA9
+074C:  MOVLW  10
+074E:  MOVWF  FA8
+0750:  BCF    FA6.6
+0752:  BCF    FA6.7
+0754:  BSF    FA6.2
+0756:  MOVLB  F
+0758:  MOVLW  55
+075A:  MOVWF  FA7
+075C:  MOVLW  AA
+075E:  MOVWF  FA7
+0760:  BSF    FA6.1
+0762:  BTFSC  FA6.1
+0764:  BRA    0762
+0766:  BCF    FA6.2
+0768:  MOVF   00,W
+076A:  IORWF  FF2,F
+076C:  MOVLB  0
+....................                                        } 
+....................                                        if(Pickitbuff[5]==0X01) 
+076E:  DECFSZ 4C,W
+0770:  BRA    07A4
+....................                                        { 
+....................                                           Estado_Relays=0X01; 
+0772:  MOVLW  01
+0774:  MOVWF  38
+....................                                           Respuesta=1; 
+0776:  MOVWF  35
+....................                                            write_eeprom(2,0X01); 
+0778:  MOVF   FF2,W
+077A:  MOVWF  00
+077C:  BCF    FF2.7
+077E:  MOVLW  02
+0780:  MOVWF  FA9
+0782:  MOVLW  01
+0784:  MOVWF  FA8
+0786:  BCF    FA6.6
+0788:  BCF    FA6.7
+078A:  BSF    FA6.2
+078C:  MOVLB  F
+078E:  MOVLW  55
+0790:  MOVWF  FA7
+0792:  MOVLW  AA
+0794:  MOVWF  FA7
+0796:  BSF    FA6.1
+0798:  BTFSC  FA6.1
+079A:  BRA    0798
+079C:  BCF    FA6.2
+079E:  MOVF   00,W
+07A0:  IORWF  FF2,F
+07A2:  MOVLB  0
+....................                                        } 
+....................                                        if(Pickitbuff[5]==0X11) 
+07A4:  MOVF   4C,W
+07A6:  SUBLW  11
+07A8:  BNZ   07DE
+....................                                        { 
+....................                                           Estado_Relays=0X11; 
+07AA:  MOVLW  11
+07AC:  MOVWF  38
+....................                                           Respuesta=1; 
+07AE:  MOVLW  01
+07B0:  MOVWF  35
+....................                                            write_eeprom(2,0X11); 
+07B2:  MOVF   FF2,W
+07B4:  MOVWF  00
+07B6:  BCF    FF2.7
+07B8:  MOVLW  02
+07BA:  MOVWF  FA9
+07BC:  MOVLW  11
+07BE:  MOVWF  FA8
+07C0:  BCF    FA6.6
+07C2:  BCF    FA6.7
+07C4:  BSF    FA6.2
+07C6:  MOVLB  F
+07C8:  MOVLW  55
+07CA:  MOVWF  FA7
+07CC:  MOVLW  AA
+07CE:  MOVWF  FA7
+07D0:  BSF    FA6.1
+07D2:  BTFSC  FA6.1
+07D4:  BRA    07D2
+07D6:  BCF    FA6.2
+07D8:  MOVF   00,W
+07DA:  IORWF  FF2,F
+07DC:  MOVLB  0
+....................                                        } 
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+07DE:  BRA    08FC
+....................                                   
+....................                              case 3:  //Comando para establecer el numero de serie 
+....................                                 { 
+....................                                     if(Pickitbuff[6]==0X3C && Pickitbuff[7]==0X3F) 
+07E0:  MOVF   4D,W
+07E2:  SUBLW  3C
+07E4:  BNZ   0824
+07E6:  MOVF   4E,W
+07E8:  SUBLW  3F
+07EA:  BNZ   0824
+....................                                    { 
+....................                                           CMD_Ejecutado=3; 
+07EC:  MOVLW  03
+07EE:  MOVWF  36
+....................                                           write_eeprom(1,(Pickitbuff[5])); 
+07F0:  MOVF   FF2,W
+07F2:  MOVWF  00
+07F4:  BCF    FF2.7
+07F6:  MOVLW  01
+07F8:  MOVWF  FA9
+07FA:  MOVFF  4C,FA8
+07FE:  BCF    FA6.6
+0800:  BCF    FA6.7
+0802:  BSF    FA6.2
+0804:  MOVLB  F
+0806:  MOVLW  55
+0808:  MOVWF  FA7
+080A:  MOVLW  AA
+080C:  MOVWF  FA7
+080E:  BSF    FA6.1
+0810:  BTFSC  FA6.1
+0812:  BRA    0810
+0814:  BCF    FA6.2
+0816:  MOVF   00,W
+0818:  IORWF  FF2,F
+....................                                           Num_Serie1=Pickitbuff[5]; 
+081A:  MOVFF  4C,1B
+....................                                           Respuesta=1; 
+081E:  MOVLW  01
+0820:  MOVWF  35
+0822:  MOVLB  0
+....................                                     } 
+....................                                 } 
+....................                                  break; 
+0824:  BRA    08FC
+....................                                   
+....................                               case 4:  //Comando para enviar el valor del offset 
+....................                                  { 
+....................                                     if(Pickitbuff[9]==0X3C && Pickitbuff[10]==0X3F) 
+0826:  MOVF   50,W
+0828:  SUBLW  3C
+082A:  BNZ   08E0
+082C:  MOVF   51,W
+082E:  SUBLW  3F
+0830:  BNZ   08E0
+....................                                    { 
+....................                                        CMD_Ejecutado=4; 
+0832:  MOVLW  04
+0834:  MOVWF  36
+....................                                        Respuesta=1; 
+0836:  MOVLW  01
+0838:  MOVWF  35
+....................                                        write_eeprom(16,(Pickitbuff[5]));   //Valor_ADC_Vacio_High 
+083A:  MOVF   FF2,W
+083C:  MOVWF  00
+083E:  BCF    FF2.7
+0840:  MOVLW  10
+0842:  MOVWF  FA9
+0844:  MOVFF  4C,FA8
+0848:  BCF    FA6.6
+084A:  BCF    FA6.7
+084C:  BSF    FA6.2
+084E:  MOVLB  F
+0850:  MOVLW  55
+0852:  MOVWF  FA7
+0854:  MOVLW  AA
+0856:  MOVWF  FA7
+0858:  BSF    FA6.1
+085A:  BTFSC  FA6.1
+085C:  BRA    085A
+085E:  BCF    FA6.2
+0860:  MOVF   00,W
+0862:  IORWF  FF2,F
+....................                                        write_eeprom(17,(Pickitbuff[6]));   //Valor_ADC_Vacio_Low 
+0864:  MOVFF  FF2,00
+0868:  BCF    FF2.7
+086A:  MOVLW  11
+086C:  MOVWF  FA9
+086E:  MOVFF  4D,FA8
+0872:  BCF    FA6.6
+0874:  BCF    FA6.7
+0876:  BSF    FA6.2
+0878:  MOVLW  55
+087A:  MOVWF  FA7
+087C:  MOVLW  AA
+087E:  MOVWF  FA7
+0880:  BSF    FA6.1
+0882:  BTFSC  FA6.1
+0884:  BRA    0882
+0886:  BCF    FA6.2
+0888:  MOVF   00,W
+088A:  IORWF  FF2,F
+....................                                        write_eeprom(18,(Pickitbuff[7]));   //Valor_ADC_LLeno_High 
+088C:  MOVFF  FF2,00
+0890:  BCF    FF2.7
+0892:  MOVLW  12
+0894:  MOVWF  FA9
+0896:  MOVFF  4E,FA8
+089A:  BCF    FA6.6
+089C:  BCF    FA6.7
+089E:  BSF    FA6.2
+08A0:  MOVLW  55
+08A2:  MOVWF  FA7
+08A4:  MOVLW  AA
+08A6:  MOVWF  FA7
+08A8:  BSF    FA6.1
+08AA:  BTFSC  FA6.1
+08AC:  BRA    08AA
+08AE:  BCF    FA6.2
+08B0:  MOVF   00,W
+08B2:  IORWF  FF2,F
+....................                                        write_eeprom(19,(Pickitbuff[8]));   //Valor_ADC_Lleno_Low 
+08B4:  MOVFF  FF2,00
+08B8:  BCF    FF2.7
+08BA:  MOVLW  13
+08BC:  MOVWF  FA9
+08BE:  MOVFF  4F,FA8
+08C2:  BCF    FA6.6
+08C4:  BCF    FA6.7
+08C6:  BSF    FA6.2
+08C8:  MOVLW  55
+08CA:  MOVWF  FA7
+08CC:  MOVLW  AA
+08CE:  MOVWF  FA7
+08D0:  BSF    FA6.1
+08D2:  BTFSC  FA6.1
+08D4:  BRA    08D2
+08D6:  BCF    FA6.2
+08D8:  MOVF   00,W
+08DA:  IORWF  FF2,F
+....................                                        Leer_Bytes_de_Config(); 
+08DC:  MOVLB  0
+08DE:  RCALL  0282
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+08E0:  BRA    08FC
+....................                                   
+....................                               case 5 : 
+....................                                  { 
+....................                                     if(Pickitbuff[10]==0X3C && Pickitbuff[11]==0X3F) 
+08E2:  MOVF   51,W
+08E4:  SUBLW  3C
+08E6:  BNZ   08F6
+08E8:  MOVF   52,W
+08EA:  SUBLW  3F
+08EC:  BNZ   08F6
+....................                                    { 
+....................                                           CMD_Ejecutado=5; 
+08EE:  MOVLW  05
+08F0:  MOVWF  36
+....................                                           Respuesta=1; 
+08F2:  MOVLW  01
+08F4:  MOVWF  35
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+08F6:  BRA    08FC
+....................                              default: 
+....................                                     Respuesta=0; 
+08F8:  CLRF   35
+....................                                     CMD_Ejecutado=0; 
+08FA:  CLRF   36
+....................                        } 
+....................             } 
+....................          } 
+....................        } 
+....................         
+....................     //F_CMD_Completo_Pickit=0;   
+....................        
+....................        fputc(0X23,Pickit); 
+08FC:  MOVLW  23
+08FE:  MOVWF  x90
+0900:  RCALL  050E
+....................        fputc(0X5E,Pickit); 
+0902:  MOVLW  5E
+0904:  MOVWF  x90
+0906:  RCALL  050E
+....................        fputc(0X01,Pickit);             //indica que es una sensor board 
+0908:  MOVLW  01
+090A:  MOVWF  x90
+090C:  RCALL  050E
+....................        fputc(Num_Serie1,Pickit); 
+090E:  MOVFF  1B,90
+0912:  RCALL  050E
+....................        /*fputc(Num_Serie2,Pickit); 
+....................        fputc(Num_Serie3,Pickit); 
+....................        fputc(Num_Serie4,Pickit); 
+....................        fputc(Num_Serie5,Pickit); 
+....................        fputc(Num_Serie6,Pickit);*/ 
+....................        fputc(CMD_Ejecutado,Pickit); 
+0914:  MOVFF  36,90
+0918:  RCALL  050E
+....................        fputc(Respuesta,Pickit); 
+091A:  MOVFF  35,90
+091E:  RCALL  050E
+....................        fputc(0X3C,Pickit); 
+0920:  MOVLW  3C
+0922:  MOVWF  x90
+0924:  RCALL  050E
+....................        fputc(0X3F,Pickit); 
+0926:  MOVLW  3F
+0928:  MOVWF  x90
+092A:  RCALL  050E
+....................  Salida: 
+....................        Respuesta=0; 
+092C:  CLRF   35
+....................        CMD_Ejecutado=0; 
+092E:  CLRF   36
+....................        Indice_Pickit=0; 
+0930:  CLRF   44
+....................  
+....................    } 
+0932:  GOTO   0F78 (RETURN)
+.................... } 
+.................... //***************************************************************************\\ 
+.................... void Verifica_CMD_RS485(void) 
+.................... { 
+....................    if(F_CMD_Completo_RS485==1) 
+*
+099E:  BTFSS  x8D.1
+09A0:  BRA    0CC8
+....................    { 
+....................       F_CMD_Completo_RS485=0; 
+09A2:  BCF    x8D.1
+....................        
+....................        if(RS485buff[0]==0X23) 
+09A4:  MOVF   x65,W
+09A6:  SUBLW  23
+09A8:  BTFSS  FD8.2
+09AA:  BRA    0C8A
+....................        { 
+....................          if(RS485buff[1]==0X5E) 
+09AC:  MOVF   x66,W
+09AE:  SUBLW  5E
+09B0:  BTFSS  FD8.2
+09B2:  BRA    0C8A
+....................          { 
+....................              if(RS485buff[2]==0X02) //hay que reenviar todo el buffer 485 por el pickit 
+09B4:  MOVF   x67,W
+09B6:  SUBLW  02
+09B8:  BNZ   09DE
+....................             { 
+....................                        for(int i=0;i<Indice_RS485;i++) 
+09BA:  CLRF   x8E
+09BC:  MOVF   45,W
+09BE:  SUBWF  x8E,W
+09C0:  BC    09DE
+....................                        { 
+....................                            fputc(RS485buff[i],Pickit);    
+09C2:  CLRF   03
+09C4:  MOVF   x8E,W
+09C6:  ADDLW  65
+09C8:  MOVWF  FE9
+09CA:  MOVLW  00
+09CC:  ADDWFC 03,W
+09CE:  MOVWF  FEA
+09D0:  MOVFF  FEF,8F
+09D4:  MOVFF  8F,90
+09D8:  RCALL  050E
+09DA:  INCF   x8E,F
+09DC:  BRA    09BC
+....................                        } 
+....................                        //Indice_RS485=0; 
+....................                        break; 
+....................             } 
+....................             if(RS485buff[2]==0X01)  
+09DE:  DECFSZ x67,W
+09E0:  BRA    0C8A
+....................             { 
+....................                //if(RS485buff[3] == Num_Serie1 && RS485buff[4]== Num_Serie2 && RS485buff[5]== Num_Serie3 && RS485buff[6]== Num_Serie4 && RS485buff[7]== Num_Serie5 && RS485buff[8]== Num_Serie6) 
+....................                   if(RS485buff[3] == Num_Serie1)  
+09E2:  MOVF   1B,W
+09E4:  SUBWF  x68,W
+09E6:  BTFSS  FD8.2
+09E8:  BRA    0C8A
+....................                    
+....................                        switch(RS485buff[4]) 
+09EA:  MOVF   x69,W
+09EC:  BZ    0A0A
+09EE:  XORLW  01
+09F0:  BZ    0A1C
+09F2:  XORLW  03
+09F4:  BZ    0A78
+09F6:  XORLW  01
+09F8:  BTFSC  FD8.2
+09FA:  BRA    0B6C
+09FC:  XORLW  07
+09FE:  BTFSC  FD8.2
+0A00:  BRA    0BB2
+0A02:  XORLW  01
+0A04:  BTFSC  FD8.2
+0A06:  BRA    0C70
+0A08:  BRA    0C86
+....................                        { 
+....................                         
+....................                            case 0:   //Enviar estado por el 485 
+....................                                { 
+....................                                   if(RS485buff[5]==0X3C && RS485buff[6]==0X3F) 
+0A0A:  MOVF   x6A,W
+0A0C:  SUBLW  3C
+0A0E:  BNZ   0A1A
+0A10:  MOVF   x6B,W
+0A12:  SUBLW  3F
+0A14:  BNZ   0A1A
+....................                                     { 
+....................                                        Envia_Estado_RS485();   //Envia el estado por el bus 485 
+0A16:  BRA    0936
+....................                                        goto Salida2; 
+0A18:  BRA    0CC2
+....................                                     } 
+....................                                } 
+....................                                 break; 
+0A1A:  BRA    0C8A
+....................                             
+....................                            case 1:  //Comando para modificar el tiempo entre comandos de status 
+....................                                  { 
+....................                                   
+....................                                    if(RS485buff[6]==0X3C && RS485buff[7]==0X3F) 
+0A1C:  MOVF   x6B,W
+0A1E:  SUBLW  3C
+0A20:  BNZ   0A76
+0A22:  MOVF   x6C,W
+0A24:  SUBLW  3F
+0A26:  BNZ   0A76
+....................                                    { 
+....................                                        if(RS485buff[5]<0xF0) //Debera ser menor a 240 segundos 
+0A28:  MOVF   x6A,W
+0A2A:  SUBLW  EF
+0A2C:  BNC   0A70
+....................                                        { 
+....................                                              write_eeprom(0,(RS485buff[5]));// el dato recibido esta expresado en segundos  
+0A2E:  MOVF   FF2,W
+0A30:  MOVWF  00
+0A32:  BCF    FF2.7
+0A34:  CLRF   FA9
+0A36:  MOVFF  6A,FA8
+0A3A:  BCF    FA6.6
+0A3C:  BCF    FA6.7
+0A3E:  BSF    FA6.2
+0A40:  MOVLB  F
+0A42:  MOVLW  55
+0A44:  MOVWF  FA7
+0A46:  MOVLW  AA
+0A48:  MOVWF  FA7
+0A4A:  BSF    FA6.1
+0A4C:  BTFSC  FA6.1
+0A4E:  BRA    0A4C
+0A50:  BCF    FA6.2
+0A52:  MOVF   00,W
+0A54:  IORWF  FF2,F
+....................                                              delay_ms(1); 
+0A56:  MOVLW  01
+0A58:  MOVLB  0
+0A5A:  MOVWF  x8F
+0A5C:  CALL   025A
+....................                                              Tiempo_Envio_CMD = RS485buff[5]; 
+0A60:  MOVFF  6A,1A
+....................                                              Tiempo=0; 
+0A64:  CLRF   17
+....................                                              Segundos=0; 
+0A66:  CLRF   37
+....................                                              Respuesta=1; 
+0A68:  MOVLW  01
+0A6A:  MOVWF  35
+....................                                              CMD_Ejecutado=1; 
+0A6C:  MOVWF  36
+....................                                              //goto Respuesta_CMD; 
+....................                                        } 
+0A6E:  BRA    0A76
+....................                                        else 
+....................                                        { 
+....................                                              Respuesta=0; 
+0A70:  CLRF   35
+....................                                              CMD_Ejecutado=1; 
+0A72:  MOVLW  01
+0A74:  MOVWF  36
+....................                                            //goto Respuesta_CMD; 
+....................                                        } 
+....................                                     } 
+....................                                  } 
+....................                                  break;  
+0A76:  BRA    0C8A
+....................                             case 2:  //Comando para activar relays onboard 
+....................                                  { 
+....................                                   if(RS485buff[6]==0X3C && RS485buff[7]==0X3F) 
+0A78:  MOVF   x6B,W
+0A7A:  SUBLW  3C
+0A7C:  BTFSS  FD8.2
+0A7E:  BRA    0B6A
+0A80:  MOVF   x6C,W
+0A82:  SUBLW  3F
+0A84:  BNZ   0B6A
+....................                                   { 
+....................                                        CMD_Ejecutado=2; 
+0A86:  MOVLW  02
+0A88:  MOVWF  36
+....................                                        Respuesta=0; 
+0A8A:  CLRF   35
+....................                                     if(RS485buff[5]==0x00) 
+0A8C:  MOVF   x6A,F
+0A8E:  BNZ   0AC0
+....................                                     { 
+....................                                        Estado_Relays=0X00; 
+0A90:  CLRF   38
+....................                                        Respuesta=1; 
+0A92:  MOVLW  01
+0A94:  MOVWF  35
+....................                                        write_eeprom(2,0X00); 
+0A96:  MOVF   FF2,W
+0A98:  MOVWF  00
+0A9A:  BCF    FF2.7
+0A9C:  MOVLW  02
+0A9E:  MOVWF  FA9
+0AA0:  CLRF   FA8
+0AA2:  BCF    FA6.6
+0AA4:  BCF    FA6.7
+0AA6:  BSF    FA6.2
+0AA8:  MOVLB  F
+0AAA:  MOVLW  55
+0AAC:  MOVWF  FA7
+0AAE:  MOVLW  AA
+0AB0:  MOVWF  FA7
+0AB2:  BSF    FA6.1
+0AB4:  BTFSC  FA6.1
+0AB6:  BRA    0AB4
+0AB8:  BCF    FA6.2
+0ABA:  MOVF   00,W
+0ABC:  IORWF  FF2,F
+0ABE:  MOVLB  0
+....................                                     } 
+....................                                     if(RS485buff[5]==0X10) 
+0AC0:  MOVF   x6A,W
+0AC2:  SUBLW  10
+0AC4:  BNZ   0AFA
+....................                                     { 
+....................                                        Estado_Relays=0X10; 
+0AC6:  MOVLW  10
+0AC8:  MOVWF  38
+....................                                        Respuesta=1; 
+0ACA:  MOVLW  01
+0ACC:  MOVWF  35
+....................                                        write_eeprom(2,0X10); 
+0ACE:  MOVF   FF2,W
+0AD0:  MOVWF  00
+0AD2:  BCF    FF2.7
+0AD4:  MOVLW  02
+0AD6:  MOVWF  FA9
+0AD8:  MOVLW  10
+0ADA:  MOVWF  FA8
+0ADC:  BCF    FA6.6
+0ADE:  BCF    FA6.7
+0AE0:  BSF    FA6.2
+0AE2:  MOVLB  F
+0AE4:  MOVLW  55
+0AE6:  MOVWF  FA7
+0AE8:  MOVLW  AA
+0AEA:  MOVWF  FA7
+0AEC:  BSF    FA6.1
+0AEE:  BTFSC  FA6.1
+0AF0:  BRA    0AEE
+0AF2:  BCF    FA6.2
+0AF4:  MOVF   00,W
+0AF6:  IORWF  FF2,F
+0AF8:  MOVLB  0
+....................                                     } 
+....................                                     if(RS485buff[5]==0X01) 
+0AFA:  DECFSZ x6A,W
+0AFC:  BRA    0B30
+....................                                     { 
+....................                                        Estado_Relays=0X01; 
+0AFE:  MOVLW  01
+0B00:  MOVWF  38
+....................                                        Respuesta=1; 
+0B02:  MOVWF  35
+....................                                        write_eeprom(2,0X01); 
+0B04:  MOVF   FF2,W
+0B06:  MOVWF  00
+0B08:  BCF    FF2.7
+0B0A:  MOVLW  02
+0B0C:  MOVWF  FA9
+0B0E:  MOVLW  01
+0B10:  MOVWF  FA8
+0B12:  BCF    FA6.6
+0B14:  BCF    FA6.7
+0B16:  BSF    FA6.2
+0B18:  MOVLB  F
+0B1A:  MOVLW  55
+0B1C:  MOVWF  FA7
+0B1E:  MOVLW  AA
+0B20:  MOVWF  FA7
+0B22:  BSF    FA6.1
+0B24:  BTFSC  FA6.1
+0B26:  BRA    0B24
+0B28:  BCF    FA6.2
+0B2A:  MOVF   00,W
+0B2C:  IORWF  FF2,F
+0B2E:  MOVLB  0
+....................                                     } 
+....................                                     if(RS485buff[5]==0X11) 
+0B30:  MOVF   x6A,W
+0B32:  SUBLW  11
+0B34:  BNZ   0B6A
+....................                                     { 
+....................                                        Estado_Relays=0X11; 
+0B36:  MOVLW  11
+0B38:  MOVWF  38
+....................                                        Respuesta=1; 
+0B3A:  MOVLW  01
+0B3C:  MOVWF  35
+....................                                        write_eeprom(2,0X11); 
+0B3E:  MOVF   FF2,W
+0B40:  MOVWF  00
+0B42:  BCF    FF2.7
+0B44:  MOVLW  02
+0B46:  MOVWF  FA9
+0B48:  MOVLW  11
+0B4A:  MOVWF  FA8
+0B4C:  BCF    FA6.6
+0B4E:  BCF    FA6.7
+0B50:  BSF    FA6.2
+0B52:  MOVLB  F
+0B54:  MOVLW  55
+0B56:  MOVWF  FA7
+0B58:  MOVLW  AA
+0B5A:  MOVWF  FA7
+0B5C:  BSF    FA6.1
+0B5E:  BTFSC  FA6.1
+0B60:  BRA    0B5E
+0B62:  BCF    FA6.2
+0B64:  MOVF   00,W
+0B66:  IORWF  FF2,F
+0B68:  MOVLB  0
+....................                                     } 
+....................                                   } 
+....................                                  } 
+....................                                  break; 
+0B6A:  BRA    0C8A
+....................                              
+....................                              case 3:  //Comando para establecer numero de serie 
+....................                                 { 
+....................                                     if(RS485buff[6]==0X3C && RS485buff[7]==0X3F) 
+0B6C:  MOVF   x6B,W
+0B6E:  SUBLW  3C
+0B70:  BNZ   0BB0
+0B72:  MOVF   x6C,W
+0B74:  SUBLW  3F
+0B76:  BNZ   0BB0
+....................                                     { 
+....................                                        CMD_Ejecutado=3; 
+0B78:  MOVLW  03
+0B7A:  MOVWF  36
+....................                                        write_eeprom(1,(RS485buff[5])); 
+0B7C:  MOVF   FF2,W
+0B7E:  MOVWF  00
+0B80:  BCF    FF2.7
+0B82:  MOVLW  01
+0B84:  MOVWF  FA9
+0B86:  MOVFF  6A,FA8
+0B8A:  BCF    FA6.6
+0B8C:  BCF    FA6.7
+0B8E:  BSF    FA6.2
+0B90:  MOVLB  F
+0B92:  MOVLW  55
+0B94:  MOVWF  FA7
+0B96:  MOVLW  AA
+0B98:  MOVWF  FA7
+0B9A:  BSF    FA6.1
+0B9C:  BTFSC  FA6.1
+0B9E:  BRA    0B9C
+0BA0:  BCF    FA6.2
+0BA2:  MOVF   00,W
+0BA4:  IORWF  FF2,F
+....................                                        Num_Serie1=RS485buff[5]; 
+0BA6:  MOVFF  6A,1B
+....................                                        Respuesta=1; 
+0BAA:  MOVLW  01
+0BAC:  MOVWF  35
+0BAE:  MOVLB  0
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+0BB0:  BRA    0C8A
+....................                              case 4:  //Comando para enviar los settings de los valores del adc de la cisterna 
+....................                                  { 
+....................                                     if(RS485buff[9]==0X3C && RS485buff[10]==0X3F) 
+0BB2:  MOVF   x6E,W
+0BB4:  SUBLW  3C
+0BB6:  BNZ   0C6E
+0BB8:  MOVF   x6F,W
+0BBA:  SUBLW  3F
+0BBC:  BNZ   0C6E
+....................                                     { 
+....................                                        CMD_Ejecutado=4; 
+0BBE:  MOVLW  04
+0BC0:  MOVWF  36
+....................                                        Respuesta=1; 
+0BC2:  MOVLW  01
+0BC4:  MOVWF  35
+....................                                        write_eeprom(16,(RS485buff[5]));    
+0BC6:  MOVF   FF2,W
+0BC8:  MOVWF  00
+0BCA:  BCF    FF2.7
+0BCC:  MOVLW  10
+0BCE:  MOVWF  FA9
+0BD0:  MOVFF  6A,FA8
+0BD4:  BCF    FA6.6
+0BD6:  BCF    FA6.7
+0BD8:  BSF    FA6.2
+0BDA:  MOVLB  F
+0BDC:  MOVLW  55
+0BDE:  MOVWF  FA7
+0BE0:  MOVLW  AA
+0BE2:  MOVWF  FA7
+0BE4:  BSF    FA6.1
+0BE6:  BTFSC  FA6.1
+0BE8:  BRA    0BE6
+0BEA:  BCF    FA6.2
+0BEC:  MOVF   00,W
+0BEE:  IORWF  FF2,F
+....................                                        write_eeprom(17,(RS485buff[6]));    
+0BF0:  MOVFF  FF2,00
+0BF4:  BCF    FF2.7
+0BF6:  MOVLW  11
+0BF8:  MOVWF  FA9
+0BFA:  MOVFF  6B,FA8
+0BFE:  BCF    FA6.6
+0C00:  BCF    FA6.7
+0C02:  BSF    FA6.2
+0C04:  MOVLW  55
+0C06:  MOVWF  FA7
+0C08:  MOVLW  AA
+0C0A:  MOVWF  FA7
+0C0C:  BSF    FA6.1
+0C0E:  BTFSC  FA6.1
+0C10:  BRA    0C0E
+0C12:  BCF    FA6.2
+0C14:  MOVF   00,W
+0C16:  IORWF  FF2,F
+....................                                        write_eeprom(18,(RS485buff[7]));    
+0C18:  MOVFF  FF2,00
+0C1C:  BCF    FF2.7
+0C1E:  MOVLW  12
+0C20:  MOVWF  FA9
+0C22:  MOVFF  6C,FA8
+0C26:  BCF    FA6.6
+0C28:  BCF    FA6.7
+0C2A:  BSF    FA6.2
+0C2C:  MOVLW  55
+0C2E:  MOVWF  FA7
+0C30:  MOVLW  AA
+0C32:  MOVWF  FA7
+0C34:  BSF    FA6.1
+0C36:  BTFSC  FA6.1
+0C38:  BRA    0C36
+0C3A:  BCF    FA6.2
+0C3C:  MOVF   00,W
+0C3E:  IORWF  FF2,F
+....................                                        write_eeprom(19,(RS485buff[8]));    
+0C40:  MOVFF  FF2,00
+0C44:  BCF    FF2.7
+0C46:  MOVLW  13
+0C48:  MOVWF  FA9
+0C4A:  MOVFF  6D,FA8
+0C4E:  BCF    FA6.6
+0C50:  BCF    FA6.7
+0C52:  BSF    FA6.2
+0C54:  MOVLW  55
+0C56:  MOVWF  FA7
+0C58:  MOVLW  AA
+0C5A:  MOVWF  FA7
+0C5C:  BSF    FA6.1
+0C5E:  BTFSC  FA6.1
+0C60:  BRA    0C5E
+0C62:  BCF    FA6.2
+0C64:  MOVF   00,W
+0C66:  IORWF  FF2,F
+....................                                        Leer_Bytes_de_Config(); 
+0C68:  MOVLB  0
+0C6A:  CALL   0282
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+0C6E:  BRA    0C8A
+....................                               case 5 : 
+....................                                  { 
+....................                                     if(RS485buff[10]==0X3C && RS485buff[11]==0X3F) 
+0C70:  MOVF   x6F,W
+0C72:  SUBLW  3C
+0C74:  BNZ   0C84
+0C76:  MOVF   x70,W
+0C78:  SUBLW  3F
+0C7A:  BNZ   0C84
+....................                                     { 
+....................                                        CMD_Ejecutado=5; 
+0C7C:  MOVLW  05
+0C7E:  MOVWF  36
+....................                                        Respuesta=1; 
+0C80:  MOVLW  01
+0C82:  MOVWF  35
+....................                                     } 
+....................                                  } 
+....................                                  break; 
+0C84:  BRA    0C8A
+....................                              default: 
+....................                                     Respuesta=0; 
+0C86:  CLRF   35
+....................                                     CMD_Ejecutado=0; 
+0C88:  CLRF   36
+....................                        } 
+....................             } 
+....................          } 
+....................        } 
+....................        output_high(DRV_485);                                      
+0C8A:  BCF    F93.6
+0C8C:  BSF    F8A.6
+....................        delay_ms(1); 
+0C8E:  MOVLW  01
+0C90:  MOVWF  x8F
+0C92:  CALL   025A
+....................        fputc(0X23,RS485); 
+0C96:  MOVLW  23
+0C98:  RCALL  0602
+....................        fputc(0X5E,RS485); 
+0C9A:  MOVLW  5E
+0C9C:  RCALL  0602
+....................        fputc(0X01,RS485);   
+0C9E:  MOVLW  01
+0CA0:  RCALL  0602
+....................        fputc(Num_Serie1,RS485); 
+0CA2:  MOVF   1B,W
+0CA4:  RCALL  0602
+....................        fputc(CMD_Ejecutado,RS485); 
+0CA6:  MOVF   36,W
+0CA8:  RCALL  0602
+....................        fputc(Respuesta,RS485); 
+0CAA:  MOVF   35,W
+0CAC:  RCALL  0602
+....................        fputc(0X3C,RS485); 
+0CAE:  MOVLW  3C
+0CB0:  RCALL  0602
+....................        fputc(0X3F,RS485); 
+0CB2:  MOVLW  3F
+0CB4:  RCALL  0602
+....................        delay_ms(3); 
+0CB6:  MOVLW  03
+0CB8:  MOVWF  x8F
+0CBA:  CALL   025A
+....................        output_low(DRV_485);   
+0CBE:  BCF    F93.6
+0CC0:  BCF    F8A.6
+....................  Salida2: 
+....................        Respuesta=0; 
+0CC2:  CLRF   35
+....................        CMD_Ejecutado=0; 
+0CC4:  CLRF   36
+....................        Indice_RS485=0; 
+0CC6:  CLRF   45
+....................    } 
+0CC8:  GOTO   0F7A (RETURN)
+.................... } 
+.................... //***************************************************************************** 
+.................... //***************************************************************************** 
+.................... //***************************************************************************\\ 
+.................... void Verifica_CMD_Sensor(void) 
+.................... { 
+....................    if(F_CMD_Completo_Sensor==1) 
+*
+0D0C:  BTFSS  x8D.2
+0D0E:  BRA    0DE8
+....................    { 
+....................       F_CMD_Completo_Sensor=0; 
+0D10:  BCF    x8D.2
+....................       //fputc(0XBB,Pickit); 
+....................       Output_low(DRV_Sensor); 
+0D12:  BCF    F93.4
+0D14:  BCF    F8A.4
+....................        if(Sensorbuff[0]==0X52 && Sensorbuff[5]==0X0D) 
+0D16:  MOVF   x83,W
+0D18:  SUBLW  52
+0D1A:  BNZ   0DDE
+0D1C:  MOVF   x88,W
+0D1E:  SUBLW  0D
+0D20:  BNZ   0DDE
+....................        { 
+....................             Medida_1 = ((int16) (Sensorbuff[1]) - 0X30)*1000; 
+0D22:  CLRF   x8F
+0D24:  MOVFF  84,8E
+0D28:  MOVLW  30
+0D2A:  SUBWF  x8E,F
+0D2C:  MOVLW  00
+0D2E:  SUBWFB x8F,F
+0D30:  MOVFF  8F,91
+0D34:  MOVFF  8E,90
+0D38:  MOVLW  03
+0D3A:  MOVWF  x93
+0D3C:  MOVLW  E8
+0D3E:  MOVWF  x92
+0D40:  RCALL  0CCC
+0D42:  MOVFF  02,25
+0D46:  MOVFF  01,24
+....................             Medida_2 = ((int16) (Sensorbuff[2]) - 0X30)*100; 
+0D4A:  CLRF   x8F
+0D4C:  MOVFF  85,8E
+0D50:  MOVLW  30
+0D52:  SUBWF  x8E,F
+0D54:  MOVLW  00
+0D56:  SUBWFB x8F,F
+0D58:  MOVFF  8F,91
+0D5C:  MOVFF  8E,90
+0D60:  CLRF   x93
+0D62:  MOVLW  64
+0D64:  MOVWF  x92
+0D66:  RCALL  0CCC
+0D68:  MOVFF  02,27
+0D6C:  MOVFF  01,26
+....................             Medida_3 = ((int16) (Sensorbuff[3]) - 0X30)*10; 
+0D70:  CLRF   x8F
+0D72:  MOVFF  86,8E
+0D76:  MOVLW  30
+0D78:  SUBWF  x8E,F
+0D7A:  MOVLW  00
+0D7C:  SUBWFB x8F,F
+0D7E:  MOVFF  8F,91
+0D82:  MOVFF  8E,90
+0D86:  CLRF   x93
+0D88:  MOVLW  0A
+0D8A:  MOVWF  x92
+0D8C:  RCALL  0CCC
+0D8E:  MOVFF  02,29
+0D92:  MOVFF  01,28
+....................             Medida_4 = ((int16) (Sensorbuff[4]) - 0X30)*1; 
+0D96:  CLRF   x8F
+0D98:  MOVFF  87,8E
+0D9C:  MOVLW  30
+0D9E:  SUBWF  x8E,F
+0DA0:  MOVLW  00
+0DA2:  SUBWFB x8F,F
+0DA4:  MOVFF  8F,2B
+0DA8:  MOVFF  8E,2A
+....................             Distancia_Medida = Medida_1+Medida_2+Medida_3+Medida_4; 
+0DAC:  MOVF   26,W
+0DAE:  ADDWF  24,W
+0DB0:  MOVWF  x8E
+0DB2:  MOVF   27,W
+0DB4:  ADDWFC 25,W
+0DB6:  MOVWF  x8F
+0DB8:  MOVF   28,W
+0DBA:  ADDWF  x8E,F
+0DBC:  MOVF   29,W
+0DBE:  ADDWFC x8F,F
+0DC0:  MOVF   2A,W
+0DC2:  ADDWF  x8E,W
+0DC4:  MOVWF  1E
+0DC6:  MOVF   2B,W
+0DC8:  ADDWFC x8F,W
+0DCA:  MOVWF  1F
+....................             Distancia = Distancia_Medida; 
+0DCC:  MOVFF  1F,23
+0DD0:  MOVFF  1E,22
+....................             Distancia_Medida_Low = Distancia; 
+0DD4:  MOVFF  22,21
+....................             Distancia_Medida_High = Distancia>>8; 
+0DD8:  MOVFF  23,20
+....................        } 
+0DDC:  BRA    0DE8
+....................        else 
+....................        { 
+....................             fprintf(pickit,"No es un comando valido, no se recibio medida \n\t\r"); 
+0DDE:  MOVLW  28
+0DE0:  MOVWF  FF6
+0DE2:  MOVLW  02
+0DE4:  MOVWF  FF7
+0DE6:  BRA    0CEA
+....................        } 
+....................    } 
+0DE8:  GOTO   0F7C (RETURN)
+.................... } 
+....................           
+....................           
+.................... /*****************************************************************************\ 
+.................... \*****************************************************************************/ 
+.................... void main() 
+0DEC:  CLRF   FF8
+0DEE:  BCF    FD0.7
+0DF0:  BSF    07.7
+0DF2:  BSF    FB8.3
+0DF4:  MOVLW  4D
+0DF6:  MOVWF  FAF
+0DF8:  MOVLW  00
+0DFA:  MOVWF  FB0
+0DFC:  MOVLW  A6
+0DFE:  MOVWF  FAC
+0E00:  MOVLW  90
+0E02:  MOVWF  FAB
+0E04:  BCF    F92.0
+0E06:  BSF    F89.0
+0E08:  BCF    F94.0
+0E0A:  BSF    F8B.0
+0E0C:  CLRF   16
+0E0E:  CLRF   17
+0E10:  CLRF   18
+0E12:  CLRF   19
+0E14:  MOVLW  FE
+0E16:  MOVWF  1C
+0E18:  MOVWF  1D
+0E1A:  CLRF   1F
+0E1C:  CLRF   1E
+0E1E:  CLRF   20
+0E20:  CLRF   21
+0E22:  CLRF   23
+0E24:  CLRF   22
+0E26:  MOVLW  01
+0E28:  MOVWF  32
+0E2A:  MOVLW  2C
+0E2C:  MOVWF  33
+0E2E:  CLRF   34
+0E30:  CLRF   37
+0E32:  CLRF   38
+0E34:  CLRF   3C
+0E36:  CLRF   3B
+0E38:  CLRF   3A
+0E3A:  CLRF   39
+0E3C:  CLRF   40
+0E3E:  CLRF   3F
+0E40:  CLRF   3E
+0E42:  CLRF   3D
+0E44:  CLRF   41
+0E46:  CLRF   42
+0E48:  CLRF   43
+0E4A:  CLRF   44
+0E4C:  CLRF   45
+0E4E:  CLRF   46
+0E50:  BCF    x8D.0
+0E52:  BCF    x8D.1
+0E54:  BCF    x8D.2
+0E56:  MOVLW  00
+0E58:  MOVWF  F7E
+0E5A:  BCF    FC1.0
+0E5C:  BCF    FC1.1
+0E5E:  BCF    FC1.2
+0E60:  BCF    FC1.3
+0E62:  MOVWF  F7F
+0E64:  CLRF   F6B
+0E66:  CLRF   F6D
+.................... { 
+....................    setup_adc_ports(sAN7);                     
+0E68:  MOVLW  80
+0E6A:  MOVWF  F7E
+0E6C:  BCF    FC1.0
+0E6E:  BCF    FC1.1
+0E70:  BCF    FC1.2
+0E72:  BCF    FC1.3
+0E74:  MOVLW  00
+0E76:  MOVWF  F7F
+....................    setup_adc(ADC_CLOCK_INTERNAL); 
+0E78:  MOVF   FC0,W
+0E7A:  ANDLW  C0
+0E7C:  IORLW  07
+0E7E:  MOVWF  FC0
+0E80:  BSF    FC0.7
+0E82:  BSF    FC2.0
+....................    setup_vref(FALSE); 
+0E84:  CLRF   FBA
+....................    setup_spi(SPI_SS_DISABLED); 
+0E86:  BCF    FC6.5
+0E88:  BCF    F94.7
+0E8A:  BSF    F93.4
+0E8C:  BCF    F93.6
+0E8E:  MOVLW  01
+0E90:  MOVWF  FC6
+0E92:  MOVLW  00
+0E94:  MOVWF  FC7
+....................    enable_interrupts(GLOBAL); 
+0E96:  MOVLW  C0
+0E98:  IORWF  FF2,F
+....................    enable_interrupts(INT_TIMER1); 
+0E9A:  BSF    F9D.0
+....................    enable_interrupts(INT_EXT1); 
+0E9C:  BSF    FF0.3
+....................    enable_interrupts(INT_EXT2); 
+0E9E:  BSF    FF0.4
+....................    enable_interrupts(INT_RDA); 
+0EA0:  BSF    F9D.5
+....................    clear_interrupt(INT_TIMER1); 
+0EA2:  BCF    F9E.0
+....................    clear_interrupt(INT_EXT1); 
+0EA4:  BCF    FF0.0
+....................    clear_interrupt(INT_EXT2); 
+0EA6:  BCF    FF0.1
+....................    clear_interrupt(INT_RDA); 
+....................    setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);      //100 ms overflow 
+0EA8:  MOVLW  B5
+0EAA:  MOVWF  FCD
+....................    set_timer1(28036); 
+0EAC:  MOVLW  6D
+0EAE:  MOVWF  FCF
+0EB0:  MOVLW  84
+0EB2:  MOVWF  FCE
+....................    output_low(DRV_485);       //habilito el driver 485 para recibir a cualquier momento. 
+0EB4:  BCF    F93.6
+0EB6:  BCF    F8A.6
+....................    ext_int_edge(1, H_TO_L); 
+0EB8:  BCF    FF1.5
+....................    ext_int_edge(2, H_TO_L); 
+0EBA:  BCF    FF1.4
+....................    Output_low(DRV_Sensor); 
+0EBC:  BCF    F93.4
+0EBE:  BCF    F8A.4
+....................   
+.................... //*******************Verificación de bytes de configuracion******************\\ 
+....................    delay_ms(10);     //tiempo requerido para poder trabajar con le eeprom 
+0EC0:  MOVLW  0A
+0EC2:  MOVWF  x8F
+0EC4:  CALL   025A
+....................    Leer_Bytes_de_Config(); 
+0EC8:  CALL   0282
+....................     
+....................    if(Tiempo_Envio_CMD==0XFF) //si no se ha configurado el tiempo pone por default el valor de 5 segundos 
+0ECC:  INCFSZ 1A,W
+0ECE:  BRA    0EFE
+....................    { 
+....................       write_eeprom(0,1); 
+0ED0:  MOVF   FF2,W
+0ED2:  MOVWF  00
+0ED4:  BCF    FF2.7
+0ED6:  CLRF   FA9
+0ED8:  MOVLW  01
+0EDA:  MOVWF  FA8
+0EDC:  BCF    FA6.6
+0EDE:  BCF    FA6.7
+0EE0:  BSF    FA6.2
+0EE2:  MOVLB  F
+0EE4:  MOVLW  55
+0EE6:  MOVWF  FA7
+0EE8:  MOVLW  AA
+0EEA:  MOVWF  FA7
+0EEC:  BSF    FA6.1
+0EEE:  BTFSC  FA6.1
+0EF0:  BRA    0EEE
+0EF2:  BCF    FA6.2
+0EF4:  MOVF   00,W
+0EF6:  IORWF  FF2,F
+....................       Tiempo_Envio_CMD=1; 
+0EF8:  MOVLW  01
+0EFA:  MOVWF  1A
+0EFC:  MOVLB  0
+....................    } 
+....................    if(Num_Serie1==0XFF) //si no se ha configurado numero de serie, se pone por default 1 
+0EFE:  INCFSZ 1B,W
+0F00:  BRA    0F30
+....................    { 
+....................       write_eeprom(1,1); 
+0F02:  MOVF   FF2,W
+0F04:  MOVWF  00
+0F06:  BCF    FF2.7
+0F08:  MOVLW  01
+0F0A:  MOVWF  FA9
+0F0C:  MOVWF  FA8
+0F0E:  BCF    FA6.6
+0F10:  BCF    FA6.7
+0F12:  BSF    FA6.2
+0F14:  MOVLB  F
+0F16:  MOVLW  55
+0F18:  MOVWF  FA7
+0F1A:  MOVLW  AA
+0F1C:  MOVWF  FA7
+0F1E:  BSF    FA6.1
+0F20:  BTFSC  FA6.1
+0F22:  BRA    0F20
+0F24:  BCF    FA6.2
+0F26:  MOVF   00,W
+0F28:  IORWF  FF2,F
+....................       Num_Serie1=1; 
+0F2A:  MOVLW  01
+0F2C:  MOVWF  1B
+0F2E:  MOVLB  0
+....................    } 
+....................     if(Distancia_Vacio_High==0XFF && Distancia_Lleno_High==0XFF) //si no se ha configurado los niveles de adc máximo y mínimo, porcentaje toma valor de 0XFE 
+0F30:  INCFSZ 2E,W
+0F32:  BRA    0F3C
+0F34:  INCFSZ 32,W
+0F36:  BRA    0F3C
+....................    { 
+....................       Porcentaje = 0xFE; 
+0F38:  MOVLW  FE
+0F3A:  MOVWF  41
+....................    } 
+....................    if(Estado_Relays==0XFF) 
+0F3C:  INCFSZ 38,W
+0F3E:  BRA    0F6C
+....................    { 
+....................       Estado_Relays = 0X00; 
+0F40:  CLRF   38
+....................       write_eeprom(2,0); 
+0F42:  MOVF   FF2,W
+0F44:  MOVWF  00
+0F46:  BCF    FF2.7
+0F48:  MOVLW  02
+0F4A:  MOVWF  FA9
+0F4C:  CLRF   FA8
+0F4E:  BCF    FA6.6
+0F50:  BCF    FA6.7
+0F52:  BSF    FA6.2
+0F54:  MOVLB  F
+0F56:  MOVLW  55
+0F58:  MOVWF  FA7
+0F5A:  MOVLW  AA
+0F5C:  MOVWF  FA7
+0F5E:  BSF    FA6.1
+0F60:  BTFSC  FA6.1
+0F62:  BRA    0F60
+0F64:  BCF    FA6.2
+0F66:  MOVF   00,W
+0F68:  IORWF  FF2,F
+0F6A:  MOVLB  0
+....................    } 
+....................     
+....................    while(true) 
+....................    { 
+....................       Temporizaciones();    
+0F6C:  GOTO   0594
+....................       Actualiza_Estado_Relays(); 
+0F70:  GOTO   05BA
+....................       Verifica_CMD_Pickit(); 
+0F74:  GOTO   060A
+....................       Verifica_CMD_RS485(); 
+0F78:  BRA    099E
+....................       Verifica_CMD_Sensor(); 
+0F7A:  BRA    0D0C
+0F7C:  BRA    0F6C
+....................    } 
+.................... } 
+0F7E:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 6200   HS NOPLLEN PCLKEN FCMEN NOIESO
+   Word  2: 1E18   PUT NOBROWNOUT BORV19 NOWDT WDT32768
+   Word  3: 8800   HFOFST MCLR
+   Word  4: 0089   STVREN NOLVP BBSIZ2K NOXINST NODEBUG
+   Word  5: C003   NOPROTECT NOCPB NOCPD
+   Word  6: E003   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 4003   NOEBTR NOEBTRB

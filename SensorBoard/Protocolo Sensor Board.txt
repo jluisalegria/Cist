@@ -1,0 +1,116 @@
+Los comandos pueden ser ejecutados desde el puerto serial RS485, asi como desde el uartool del Pickit.
+
+llave de inicio - Destino del CMD 	- Numero de serie 	    - CMD     				  - Parametros 			- LLave de Fin
+
+235E		- 01= Ejecuta CMD	- 01 SB c/#serie 01 	    - 00=Envia estado			  -No PRMTS			-3C3F
+
+		- 02= Bypass serial	- 02 SB c/#serie 02	    - 01=Cambia tiempo de envio de Status - 01 a F0 = Segundos
+
+								    - 02=Cambia el estado de relays	  -00=Apagados
+													  -01=Off-On
+													  -10=On-Off
+													  -11=On-On
+
+								    - 03=Establecer # serie		  -XX	
+
+								    - 04=Configurar settings ADC	  -AA-BB-CC-DD-FF-GG
+													  -AA = ADC_Vacio_high
+													  -BB = ADC_Vacio_low
+													  -CC = ADC_Lleno_high
+													  -DD = ADC_Lleno_low
+													 
+								   - 05 =Configurar settings y mas        -AA = ADC_1m_high
+													  -BB = ADC_1m_low
+												    	  -CC = Altura_Cisterna
+													  -DD = Metros cubicos cisterna
+													  -EE = Numero de cisterna
+
+Comando 00:
+Ejemplo:
+	235E0101003C3F
+
+Envia como respuesta el estado del equipo.
+
+Estados del Flotador:
+00=No activado
+01=Activado 
+
+Comando 01: 
+Cambia el tiempo de transmision del estado de la tarjeta, (solo se envia hacia el pickit)
+el valor hexadecimal representa el tiempo en segundos entre cada envio de información. Va de 01 a F0.
+Ejemplos:
+	1 segundo:
+	235E010101013C3F
+	5 segundo:
+	235E010101053C3F
+
+
+Comando 02:
+Cambia el estado de los relays.
+00=Apagados
+01=Off-On
+10=On-Off
+11=On-On
+Ejemplos:
+	Ambos prendidos:
+	235E010102113C3F
+	Ambos apagados:
+	235E010102003C3F
+
+Comando 03:
+Establecer el numero de serie, 1 bytes, se utiliza para hacer una diferenciacion entre las posibles sensor boards conectadas a una misma antena. Para la aplicacion en unison solamente se consideraron maximo dos por antena pero pudieran ser mas. Por default si no se configura un numero de serie el FW lo configura a 01.
+Ejemplos:
+	# de serie 01
+	235E010103013C3F
+
+Comando 04:
+Configurar los settings de los valores de las lecturas del ADC.
+Las variables de los valores del ADC son de 16 bits, por lo que los valores de referencia son elmacenados en dos localidades de la memoria EEPROM, con byte alto y bajo.
+
+AA = ADC_Vacio_high. ADC_Vacio indica el valor de la lectura del ADC, cuando no se ha sumergido en el agua.
+BB = ADC_Vacio_low
+CC = ADC_Lleno_high. ADC_LLeno indica el valor de la lectura del ADC, cuando se encuentra a su nivel maximo de agua.
+DD = ADC_Lleno_low
+Ejemplos:
+	ADC vacio = 0X00F5 y ADC lleno = 0X02E5
+	235E01010400F502E53C3F
+
+Comando 05
+Configura el valor del ADC a un metro del fondo y en base a la profundidad, calcula el valor que debera tener el ADC lleno
+AA = ADC_1m_high. ADC 1 m se utiliza para hacer un calculo del posible valor maximo del adc con la cisterna llena, cuando no se pueda acceder a este dato,
+BB = ADC_1m_low
+CC = Altura cisterna en metros
+DD = Metros_Cubicos_Cisterna
+EE = Numero de cisterna
+
+Si se configura el valor del adc vacio y del adc lleno, no toma en cuenta el valor de muestreo del adc a 1m, ya que no es necesario calcular el valor del adc con cisterna llena
+Ejemplo:
+	ADC medido a 1m del fondo = 0X0145, Metros cubicos = 0X25, Altura cisterna = 0X04(Metros), Numero de cisterna = 0X09
+	235E01010501452504093C3F
+
+
+Respuestas de los comandos
+
+    Todas las respuestas a excepcion de la del comando 00 tienen las misma estructura
+
+	Respuesta comando 0	
+	Llave de inicio-#serie-CMD-Estado_Relays-Estado_Flotador- LecturaADCHigh-LecturaADCLow-SettingsADCVaciohigh-SettingsADCVaciolow-SettingsADCLlenohigh-			SettingsADCLlenolow-Porcentaje-MetrosCubicostotales-Numero_cisterna-LLave de fin.
+	Ejemplo:
+	23 5E 01 00 00 01 00 64 00 60 02 22 00 22 12 3C 3F
+	
+	Cuando no se han configurado los parametros de valores máximo y mínimo de la lectura del ADC, el porecentaje toma valor de 0XFE. 
+	
+
+	Respuesta resto de los comandos:
+
+	Llave de inicio - Destino - numero de serie - CMD ejecutado - Respuesta - LLave de fin
+	235E010102013C3F 
+
+		CMD Ejecutado:
+			00=Comando invalido.
+			01-05= Indica el numero de CMD recibido.
+		Respuesta:
+			00=Error, Comando no ejecutado, revisar parametros enviados.
+			01=Ok, Comando ejecutado
+	
+

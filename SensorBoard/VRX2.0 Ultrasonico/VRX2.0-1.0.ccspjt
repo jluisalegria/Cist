@@ -1,0 +1,19 @@
+[PROJECT]
+Target=VRX2.0-1.0.hex
+Processor_Text=PIC18F14K22
+CCSVersion=5.015
+Compiler=PCH
+[Target Data]
+FileList=VRX2.0-1.0.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\
+[VRX2.0-1.0.c]
+Type=4
+[mru-list]
+1=VRX2.0-1.0.c
+[Opened Files]
+1=VRX2.0-1.0.c
+2=
+[Units]
+Count=1
+1=VRX2.0-1.0 (main)
